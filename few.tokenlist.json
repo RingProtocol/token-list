@@ -1,6 +1,6 @@
 {
   "name": "Few Token List",
-  "logoURI": "https://ethereum-optimism.github.io/optimism.svg",
+  "logoURI": "https://raw.githubusercontent.com/Few-Protocol/token-list/master/assets/asset_RNG.svg",
   "keywords": [
     "scaling",
     "layer2",
@@ -8,6 +8,71 @@
   ],
   "timestamp": "2023-12-29T04:10:37.690Z",
   "tokens": [
+    {
+      "chainId": 168587773,
+      "address": "0x7647a41596c1Ca0127BaCaa25205b310A0436B4C",
+      "name": "Ring Governance Token",
+      "symbol": "RGB",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/token-list/master/assets/asset_RNG.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x9BF7537cE9F808c845d5Cfe1e94c856A74Fa56d7",
+        "fewName": "Few Wrapped Ring Governance Token",
+        "fewSymbol": "fwRGB"
+      }
+    },
+    {
+      "chainId": 168587773,
+      "address": "0xD8F542D710346DF26F28D6502A48F49fB2cFD19B",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/USDT/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0xD8f6A67D198485335DAF4aaDeb74358BC021410d",
+        "fewName": "Few Wrapped Tether USD",
+        "fewSymbol": "fwUSDT"
+      }
+    },
+    {
+      "chainId": 168587773,
+      "address": "0xF19A5b56b419170Aa2ee49E5c9195F5902D39BF1",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://ethereum-optimism.github.io/data/USDC/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0xa7870cf9143084ED04f4C2311f48CB24a2b4A097",
+        "fewName": "Few Wrapped USD Coin",
+        "fewSymbol": "fwUSDC"
+      }
+    },
+    {
+      "chainId": 168587773,
+      "address": "0x9C6Fc5bF860A4a012C9De812002dB304AD04F581",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/DAI/logo.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x9DB240312deEFEC82687405a4CF42511032d55d8",
+        "fewName": "Few Wrapped Dai Stablecoin",
+        "fewSymbol": "fwDAI"
+      }
+    },
+    {
+      "chainId": 168587773,
+      "address": "0x4200000000000000000000000000000000000023",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/WETH/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0x798dE0520497E28E8eBfF0DF1d791c2E942eA881",
+        "fewName": "Few Wrapped Wrapped Ether",
+        "fewSymbol": "fwWETH"
+      }
+    },
     {
       "chainId": 5,
       "address": "0x794325B9dE05c48A7E29fa8AEE260719D97c6a2D",
