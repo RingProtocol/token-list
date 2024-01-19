@@ -1,6 +1,6 @@
 {
   "name": "Ring Inactive Token List",
-  "logoURI": "https://ethereum-optimism.github.io/optimism.svg",
+  "logoURI": "https://raw.githubusercontent.com/Few-Protocol/token-list/master/assets/asset_RNG.svg",
   "keywords": [
     "scaling",
     "layer2",
@@ -14,11 +14,26 @@
       "name": "Ring Exchange",
       "symbol": "RNG",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/token-list/ring-interface/assets/asset_RNG.svg",
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/token-list/master/assets/asset_RNG.svg",
       "extensions": {
         "opListId": "default",
         "opTokenId": "RNG",
         "fewWrappedAddress": "0xe6B8dDee63CaD05f686d5e66Ba18893AF366CFa7",
+        "fewName": "Few Wrapped Ring Exchange",
+        "fewSymbol": "fwRNG"
+      }
+    },
+    {
+      "chainId": 168587773,
+      "address": "0x21cC6C8cE8F8808E9842b7c49119C1e6106eacBe",
+      "name": "Ring Exchange",
+      "symbol": "RNG",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/token-list/master/assets/asset_RNG.svg",
+      "extensions": {
+        "opListId": "default",
+        "opTokenId": "RNG",
+        "fewWrappedAddress": "0x187221b41f430faF3E418592746AE1a4f02b72EB",
         "fewName": "Few Wrapped Ring Exchange",
         "fewSymbol": "fwRNG"
       }
