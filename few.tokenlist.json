@@ -8,7 +8,6 @@
   ],
   "timestamp": "2023-12-29T04:10:37.690Z",
   "tokens": [
-
     {
       "chainId": 81457,
       "address": "0x4300000000000000000000000000000000000004",
@@ -37,6 +36,32 @@
     },
     {
       "chainId": 81457,
+      "address": "0xF7bc58b8D8f97ADC129cfC4c9f45Ce3C0E1D2692",
+      "name": "Wrapped BTC",
+      "symbol": "WBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_WBTC.png",
+      "extensions": {
+        "fewWrappedAddress": "0x97eCAD323F63060DF37FF0Cf05350803dB4D17Bd",
+        "fewName": "Few Wrapped Wrapped BTC",
+        "fewSymbol": "fwWBTC"
+      }
+    },
+    {
+      "chainId": 81457,
+      "address": "0x818a92bc81Aad0053d72ba753fb5Bc3d0C5C0923",
+      "name": "Juice",
+      "symbol": "JUICE",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_JUICE.jpeg",
+      "extensions": {
+        "fewWrappedAddress": "0x30c7b9F4CD589203d250aD165651e82E338CB5bB",
+        "fewName": "Few Wrapped Juice",
+        "fewSymbol": "fwJUICE"
+      }
+    },
+    {
+      "chainId": 81457,
       "address": "0x5F59EcF360F19444173D120fec7D1FB0c42e0f26",
       "name": "DragonBall",
       "symbol": "DBZ",
@@ -59,19 +84,6 @@
         "fewWrappedAddress": "0x0c62B12CBc5FfbCDb3A0a90CCe1Aff51b79FF5fb",
         "fewName": "Few Wrapped OmniCat",
         "fewSymbol": "fwOMNI"
-      }
-    },
-    {
-      "chainId": 81457,
-      "address": "0x818a92bc81Aad0053d72ba753fb5Bc3d0C5C0923",
-      "name": "Juice",
-      "symbol": "JUICE",
-      "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_JUICE.jpeg",
-      "extensions": {
-        "fewWrappedAddress": "0x30c7b9F4CD589203d250aD165651e82E338CB5bB",
-        "fewName": "Few Wrapped Juice",
-        "fewSymbol": "fwJUICE"
       }
     },
     {
@@ -310,6 +322,6 @@
   "version": {
     "major": 10,
     "minor": 0,
-    "patch": 22
+    "patch": 23
   }
 }
