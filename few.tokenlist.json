@@ -49,6 +49,19 @@
     },
     {
       "chainId": 81457,
+      "address": "0x42E12D42b3d6C4A74a88A61063856756Ea2DB357",
+      "name": "Orbit Protocol",
+      "symbol": "ORBIT",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_ORBIT.png",
+      "extensions": {
+        "fewWrappedAddress": "0x35b1cd11B684C7A9e1aA8d34e6B2a500310Ec35c",
+        "fewName": "Few Wrapped Orbit Protocol",
+        "fewSymbol": "fwORBIT"
+      }
+    },
+    {
+      "chainId": 81457,
       "address": "0x818a92bc81Aad0053d72ba753fb5Bc3d0C5C0923",
       "name": "Juice",
       "symbol": "JUICE",
@@ -320,8 +333,8 @@
     }
   ],
   "version": {
-    "major": 11,
+    "major": 12,
     "minor": 0,
-    "patch": 23
+    "patch": 24
   }
 }
