@@ -75,6 +75,32 @@
     },
     {
       "chainId": 81457,
+      "address": "0x1Da40C742F32bBEe81694051c0eE07485fC630f6",
+      "name": "Duo ETH",
+      "symbol": "DETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_DETH.png",
+      "extensions": {
+        "fewWrappedAddress": "0xB0de93a54dA8a2cfCDe44a06F797aB2fb9d39fB8",
+        "fewName": "Few Wrapped Duo ETH",
+        "fewSymbol": "fwDETH"
+      }
+    },
+    {
+      "chainId": 81457,
+      "address": "0x1A3D9B2fa5c6522c8c071dC07125cE55dF90b253",
+      "name": "Duo USD",
+      "symbol": "DUSD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_DUSD.png",
+      "extensions": {
+        "fewWrappedAddress": "0x04d4fd245aCD3d7b3a1126ae27173FCa354f658B",
+        "fewName": "Few Wrapped Duo USD",
+        "fewSymbol": "fwDUSD"
+      }
+    },
+    {
+      "chainId": 81457,
       "address": "0x5F59EcF360F19444173D120fec7D1FB0c42e0f26",
       "name": "DragonBall",
       "symbol": "DBZ",
@@ -335,6 +361,6 @@
   "version": {
     "major": 12,
     "minor": 0,
-    "patch": 24
+    "patch": 25
   }
 }
