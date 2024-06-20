@@ -154,14 +154,14 @@
     {
       "chainId": 168587773,
       "address": "0x0BD5539E33a1236bA69228271e60f3bFf8fDB7DB",
-      "name": "Ring Governance Token",
-      "symbol": "RING",
+      "name": "Ring Point",
+      "symbol": "POINT",
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_RING_POINT.png",
       "extensions": {
         "fewWrappedAddress": "0xcd975BAa73D36b78EB6629ba05E92fa0f2bB3d84",
-        "fewName": "Few Wrapped Ring Governance Token",
-        "fewSymbol": "fwRING"
+        "fewName": "Few Wrapped Ring Point",
+        "fewSymbol": "fwPOINT"
       }
     },
     {
@@ -245,12 +245,25 @@
     {
       "chainId": 11155111,
       "address": "0x60735d0a0B731bD07f9fa8733f0F9B6c6eDA3Be7",
+      "name": "Ring Point",
+      "symbol": "POINT",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_RNG.svg",
+      "extensions": {
+        "fewWrappedAddress": "0xC15bCBFA8ee06d98F0b7B14f6E04109bC751c622",
+        "fewName": "Few Wrapped Ring Point",
+        "fewSymbol": "fwPOINT"
+      }
+    },
+    {
+      "chainId": 11155111,
+      "address": "0x33dCc49DFa5c8C9d7fa9BfF4038B2CC08Dd10E3B",
       "name": "Ring Governance Token",
       "symbol": "RING",
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_RNG.svg",
       "extensions": {
-        "fewWrappedAddress": "0xC15bCBFA8ee06d98F0b7B14f6E04109bC751c622",
+        "fewWrappedAddress": "0x6D615387e48b58EEAe3b406F7eFD836579d60b11",
         "fewName": "Few Wrapped Ring Governance Token",
         "fewSymbol": "fwRING"
       }
@@ -374,6 +387,6 @@
   "version": {
     "major": 14,
     "minor": 0,
-    "patch": 27
+    "patch": 28
   }
 }
