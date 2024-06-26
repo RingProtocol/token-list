@@ -165,6 +165,19 @@
       }
     },
     {
+      "chainId": 81457,
+      "address": "0xb1a5700fA2358173Fe465e6eA4Ff52E36e88E2ad",
+      "name": "Blast",
+      "symbol": "BLAST",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_BLAST.svg",
+      "extensions": {
+        "fewWrappedAddress": "0xb1E4E8B433C76C1fD42Bd3099a5E5817fff69fE4",
+        "fewName": "Few Wrapped Blast",
+        "fewSymbol": "fwBLAST"
+      }
+    },
+    {
       "chainId": 168587773,
       "address": "0x7647a41596c1Ca0127BaCaa25205b310A0436B4C",
       "name": "Ring Governance Token",
@@ -411,8 +424,8 @@
     }
   ],
   "version": {
-    "major": 16,
+    "major": 17,
     "minor": 0,
-    "patch": 30
+    "patch": 31
   }
 }
