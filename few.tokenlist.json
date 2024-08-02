@@ -178,6 +178,19 @@
       }
     },
     {
+      "chainId": 81457,
+      "address": "0xbDFd771208c7A0fC128AE538e1c4BcA9A354Ec4E",
+      "name": "Long Token",
+      "symbol": "LONG",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_LONG.jpg",
+      "extensions": {
+        "fewWrappedAddress": "0x73c8cA86a7298D9F0B043EFEe946ec8b0e12FC5f",
+        "fewName": "Few Wrapped LONG",
+        "fewSymbol": "fwLONG"
+      }
+    },
+    {
       "chainId": 1,
       "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
       "name": "Wrapped BTC",
@@ -489,8 +502,8 @@
     }
   ],
   "version": {
-    "major": 18,
+    "major": 19,
     "minor": 0,
-    "patch": 32
+    "patch": 33
   }
 }
