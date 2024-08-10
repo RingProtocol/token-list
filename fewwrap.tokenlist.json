@@ -197,11 +197,7 @@
       "symbol": "fwWETH",
       "decimals": 18,
       "logoURI": "https://ethereum-optimism.github.io/data/WETH/logo.png",
-      "extensions": {
-        "fewWrappedAddress": "0x66714DB8F3397c767d0A602458B5b4E3C0FE7dd1",
-        "fewName": "Few Wrapped Wrapped Ether",
-        "fewSymbol": "fwWETH"
-      }
+      "extensions": {}
     },
     {
       "chainId": 81457,
@@ -210,11 +206,7 @@
       "symbol": "fwUSDB",
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDB.svg",
-      "extensions": {
-        "fewWrappedAddress": "0x866f2C06B83Df2ed7Ca9C2D044940E7CD55a06d6",
-        "fewName": "Few Wrapped USDB",
-        "fewSymbol": "fwUSDB"
-      }
+      "extensions": {}
     },
     {
       "chainId": 81457,
@@ -223,11 +215,7 @@
       "symbol": "fwWBTC",
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_WBTC.png",
-      "extensions": {
-        "fewWrappedAddress": "0x97eCAD323F63060DF37FF0Cf05350803dB4D17Bd",
-        "fewName": "Few Wrapped Wrapped BTC",
-        "fewSymbol": "fwWBTC"
-      }
+      "extensions": {}
     },
     {
       "chainId": 81457,
@@ -236,11 +224,7 @@
       "symbol": "fwORBIT",
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_ORBIT.png",
-      "extensions": {
-        "fewWrappedAddress": "0x35b1cd11B684C7A9e1aA8d34e6B2a500310Ec35c",
-        "fewName": "Few Wrapped Orbit Protocol",
-        "fewSymbol": "fwORBIT"
-      }
+      "extensions": {}
     },
     {
       "chainId": 81457,
@@ -639,11 +623,121 @@
       "decimals": 18,
       "logoURI": "https://ethereum-optimism.github.io/data/WETH/logo.png",
       "extensions": {}
+    },
+    {
+      "chainId": 1,
+      "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      "name": "Wrapped BTC",
+      "symbol": "WBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_WBTC.png",
+      "extensions": {
+        "fewWrappedAddress": "0x2078f336Fdd260f708BEc4a20c82b063274E1b23",
+        "fewName": "Few Wrapped Wrapped BTC",
+        "fewSymbol": "fwWBTC"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_ETH.svg",
+      "extensions": {
+        "fewWrappedAddress": "0xa250CC729Bb3323e7933022a67B52200fE354767",
+        "fewName": "Few Wrapped Wrapped Ether",
+        "fewSymbol": "fwWETH"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDC.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x0492560FA7Cfd6A85E50D8bE3F77318994F8f429",
+        "fewName": "Few Wrapped USD Coin",
+        "fewSymbol": "fwUSDC"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDT.svg",
+      "extensions": {
+        "fewWrappedAddress": "0xef87f4608e601E8564800265AeE1c1FfaDF73283",
+        "fewName": "Few Wrapped Tether USD",
+        "fewSymbol": "fwUSDT"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_DAI.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x8A6fe57C08C84e0f4eE97aAe68a62e820a37d259",
+        "fewName": "Few Wrapped DAI",
+        "fewSymbol": "fwDAI"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x2078f336Fdd260f708BEc4a20c82b063274E1b23",
+      "name": "Few Wrapped Wrapped BTC",
+      "symbol": "fwWBTC",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_WBTC.png",
+      "extensions": {}
+    },
+    {
+      "chainId": 1,
+      "address": "0xa250CC729Bb3323e7933022a67B52200fE354767",
+      "name": "Few Wrapped Wrapped Ether",
+      "symbol": "fwWETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_ETH.svg",
+      "extensions": {}
+    },
+    {
+      "chainId": 1,
+      "address": "0x0492560FA7Cfd6A85E50D8bE3F77318994F8f429",
+      "name": "Few Wrapped USD Coin",
+      "symbol": "fwUSDC",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDC.svg",
+      "extensions": {}
+    },
+    {
+      "chainId": 1,
+      "address": "0xef87f4608e601E8564800265AeE1c1FfaDF73283",
+      "name": "Few Wrapped Tether USD",
+      "symbol": "fwUSDT",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDT.svg",
+      "extensions": {}
+    },
+    {
+      "chainId": 1,
+      "address": "0x8A6fe57C08C84e0f4eE97aAe68a62e820a37d259",
+      "name": "Few Wrapped Dai Stablecoin",
+      "symbol": "fwDAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_DAI.svg",
+      "extensions": {}
     }
   ],
   "version": {
-    "major": 13,
+    "major": 14,
     "minor": 0,
-    "patch": 26
+    "patch": 27
   }
 }
