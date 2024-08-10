@@ -236,7 +236,11 @@
       "symbol": "fwORBIT",
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_ORBIT.png",
-      "extensions": {}
+      "extensions": {
+        "fewWrappedAddress": "0x35b1cd11B684C7A9e1aA8d34e6B2a500310Ec35c",
+        "fewName": "Few Wrapped Orbit Protocol",
+        "fewSymbol": "fwORBIT"
+      }
     },
     {
       "chainId": 81457,
@@ -638,8 +642,8 @@
     }
   ],
   "version": {
-    "major": 12,
+    "major": 13,
     "minor": 0,
-    "patch": 25
+    "patch": 26
   }
 }
