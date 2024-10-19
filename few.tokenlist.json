@@ -114,6 +114,19 @@
     },
     {
       "chainId": 81457,
+      "address": "0xd79d6Fe06F4C2b17291015169d1443f50D0C2838",
+      "name": "Wand ETHx",
+      "symbol": "ETHx",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_ETHx.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x09f1917D968A3eE1355e61Fb6A0347de614116AF",
+        "fewName": "Few Wrapped ETHx",
+        "fewSymbol": "fwETHx"
+      }
+    },
+    {
+      "chainId": 81457,
       "address": "0x5F59EcF360F19444173D120fec7D1FB0c42e0f26",
       "name": "DragonBall",
       "symbol": "DBZ",
@@ -502,8 +515,8 @@
     }
   ],
   "version": {
-    "major": 19,
+    "major": 20,
     "minor": 0,
-    "patch": 33
+    "patch": 34
   }
 }
