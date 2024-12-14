@@ -580,6 +580,19 @@
     },
     {
       "chainId": 8453,
+      "address": "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
+      "name": "USD Base Coin",
+      "symbol": "USDbC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDC.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x1263e0908f4670C1D242b3a510e5B46f1962E47A",
+        "fewName": "Few Wrapped USD Base Coin",
+        "fewSymbol": "fwUSDbC"
+      }
+    },
+    {
+      "chainId": 8453,
       "address": "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2",
       "name": "Tether USD",
       "symbol": "USDT",
@@ -606,8 +619,8 @@
     }
   ],
   "version": {
-    "major": 22,
+    "major": 23,
     "minor": 0,
-    "patch": 36
+    "patch": 37
   }
 }
