@@ -616,6 +616,71 @@
         "fewName": "Few Wrapped DAI",
         "fewSymbol": "fwDAI"
       }
+    },
+    {
+      "chainId": 42161,
+      "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
+      "name": "Wrapped BTC",
+      "symbol": "WBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_CBBTC.png",
+      "extensions": {
+        "fewWrappedAddress": "0x0c5EC8a8AE241091A5AcB8fFaA165895E0A9aEc7",
+        "fewName": "Few Wrapped Wrapped BTC",
+        "fewSymbol": "fwWBTC"
+      }
+    },
+    {
+      "chainId": 42161,
+      "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_ETH.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x76CDff74222533Efa4BAa713BC3d14df81A460F7",
+        "fewName": "Few Wrapped Wrapped Ether",
+        "fewSymbol": "fwWETH"
+      }
+    },
+    {
+      "chainId": 42161,
+      "address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDC.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x21719B213646627698c8A5ADa5A6cf2Eb82C540a",
+        "fewName": "Few Wrapped USD Coin",
+        "fewSymbol": "fwUSDC"
+      }
+    },
+    {
+      "chainId": 42161,
+      "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDT.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x49539A32510a4d1706eB1852Cc6a7Db6677dDc1b",
+        "fewName": "Few Wrapped Tether USD",
+        "fewSymbol": "fwUSDT"
+      }
+    },
+    {
+      "chainId": 42161,
+      "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_DAI.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x925dc2b62CD41a6318cC481752279b0a6D02D1D4",
+        "fewName": "Few Wrapped DAI",
+        "fewSymbol": "fwDAI"
+      }
     }
   ],
   "version": {
