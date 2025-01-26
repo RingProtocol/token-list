@@ -681,11 +681,37 @@
         "fewName": "Few Wrapped DAI",
         "fewSymbol": "fwDAI"
       }
+    },
+    {
+      "chainId": 1516,
+      "address": "0xe8CabF9d1FFB6CE23cF0a86641849543ec7BD7d5",
+      "name": "Wrapped IP",
+      "symbol": "WIP",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_WIP.svg",
+      "extensions": {
+        "fewWrappedAddress": "0xA67013F71AF4f21563BAf8C1d156F1Dc7ab681C6",
+        "fewName": "Few Wrapped Wrapped IP",
+        "fewSymbol": "fwWIP"
+      }
+    },
+    {
+      "chainId": 1516,
+      "address": "0xC0F6E387aC0B324Ec18EAcf22EE7271207dCE3d5",
+      "name": "SUSD",
+      "symbol": "SUSD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_SUSD.svg",
+      "extensions": {
+        "fewWrappedAddress": "0xb76452d2e299ee782b30D5EE5b50c7D3c7e6446B",
+        "fewName": "Few Wrapped SUSD",
+        "fewSymbol": "fwSUSD"
+      }
     }
   ],
   "version": {
-    "major": 25,
+    "major": 26,
     "minor": 0,
-    "patch": 39
+    "patch": 40
   }
 }
