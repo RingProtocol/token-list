@@ -644,11 +644,37 @@
         "fewName": "Few Wrapped Story USD",
         "fewSymbol": "fwSUSD"
       }
+    },
+    {
+      "chainId": 130,
+      "address": "0x078D782b760474a361dDA0AF3839290b0EF57AD6",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://ethereum-optimism.github.io/data/USDC/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0x88daE9d30E95C608c3FA3dAc26636Be59Ab2c488",
+        "fewName": "Few Wrapped USD Coin",
+        "fewSymbol": "fwUSDC"
+      }
+    },
+    {
+      "chainId": 130,
+      "address": "0x4200000000000000000000000000000000000006",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/WETH/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0x05e6c1B4Da05c41c86c35Ce42a8a222C1a450167",
+        "fewName": "Few Wrapped Wrapped Ether",
+        "fewSymbol": "fwWETH"
+      }
     }
   ],
   "version": {
-    "major": 26,
+    "major": 27,
     "minor": 0,
-    "patch": 40
+    "patch": 41
   }
 }

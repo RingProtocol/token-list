@@ -877,11 +877,29 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_SUSD.svg",
       "extensions": {}
+    },
+    {
+      "chainId": 130,
+      "address": "0x88daE9d30E95C608c3FA3dAc26636Be59Ab2c488",
+      "name": "Few Wrapped USD Coin",
+      "symbol": "fwUSDC",
+      "decimals": 6,
+      "logoURI": "https://ethereum-optimism.github.io/data/USDC/logo.png",
+      "extensions": {}
+    },
+    {
+      "chainId": 130,
+      "address": "0x05e6c1B4Da05c41c86c35Ce42a8a222C1a450167",
+      "name": "Few Wrapped Wrapped Ether",
+      "symbol": "fwWETH",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/WETH/logo.png",
+      "extensions": {}
     }
   ],
   "version": {
-    "major": 18,
+    "major": 19,
     "minor": 0,
-    "patch": 31
+    "patch": 32
   }
 }
