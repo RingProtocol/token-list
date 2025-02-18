@@ -895,11 +895,47 @@
       "decimals": 18,
       "logoURI": "https://ethereum-optimism.github.io/data/WETH/logo.png",
       "extensions": {}
+    },
+    {
+      "chainId": 130,
+      "address": "0xbcc19C2adC5677C0712f723B79472c4c2A0Ffa59",
+      "name": "Few Wrapped Dai Stablecoin",
+      "symbol": "fwDAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_DAI.svg",
+      "extensions": {}
+    },
+    {
+      "chainId": 130,
+      "address": "0x4F28763d62df3617780efB323729019E916D4621",
+      "name": "Few Wrapped Tether USD",
+      "symbol": "fwUSDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDT.svg",
+      "extensions": {}
+    },
+    {
+      "chainId": 130,
+      "address": "0x171ec1Ab634ae6595Ee2EAe5923B1E151edd93E9",
+      "name": "Few Wrapped Wrapped BTC",
+      "symbol": "fwWBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_WBTC.png",
+      "extensions": {}
+    },
+    {
+      "chainId": 130,
+      "address": "0x2e1Ac11BF7EFA6Af21Dba77A93046D818128ABbA",
+      "name": "Few Wrapped Uniswap",
+      "symbol": "fwUNI",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/UNI/logo.png",
+      "extensions": {}
     }
   ],
   "version": {
-    "major": 19,
+    "major": 20,
     "minor": 0,
-    "patch": 32
+    "patch": 33
   }
 }
