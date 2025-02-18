@@ -670,11 +670,63 @@
         "fewName": "Few Wrapped Wrapped Ether",
         "fewSymbol": "fwWETH"
       }
+    },
+    {
+      "chainId": 130,
+      "address": "0x20CAb320A855b39F724131C69424240519573f81",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_DAI.svg",
+      "extensions": {
+        "fewWrappedAddress": "0xbcc19C2adC5677C0712f723B79472c4c2A0Ffa59",
+        "fewName": "Few Wrapped DAI",
+        "fewSymbol": "fwDAI"
+      }
+    },
+    {
+      "chainId": 130,
+      "address": "0x588CE4F028D8e7B53B687865d6A67b3A54C75518",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDT.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x4F28763d62df3617780efB323729019E916D4621",
+        "fewName": "Few Wrapped Tether USD",
+        "fewSymbol": "fwUSDT"
+      }
+    },
+    {
+      "chainId": 130,
+      "address": "0x927B51f251480a681271180DA4de28D44EC4AfB8",
+      "name": "Wrapped BTC",
+      "symbol": "WBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_WBTC.png",
+      "extensions": {
+        "fewWrappedAddress": "0x171ec1Ab634ae6595Ee2EAe5923B1E151edd93E9",
+        "fewName": "Few Wrapped Wrapped BTC",
+        "fewSymbol": "fwWBTC"
+      }
+    },
+    {
+      "chainId": 130,
+      "address": "0x8f187aA05619a017077f5308904739877ce9eA21",
+      "name": "Wrapped Uniswap",
+      "symbol": "UNI",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/UNI/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0x2e1Ac11BF7EFA6Af21Dba77A93046D818128ABbA",
+        "fewName": "Few Wrapped Wrapped Uniswap",
+        "fewSymbol": "fwUNI"
+      }
     }
   ],
   "version": {
-    "major": 27,
+    "major": 28,
     "minor": 0,
-    "patch": 41
+    "patch": 42
   }
 }
