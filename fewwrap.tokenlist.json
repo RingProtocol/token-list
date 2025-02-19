@@ -1087,11 +1087,143 @@
       "decimals": 18,
       "logoURI": "https://ethereum-optimism.github.io/data/UNI/logo.png",
       "extensions": {}
+    },
+    {
+      "chainId": 56,
+      "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+      "name": "Wrapped BNB",
+      "symbol": "WBNB",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_WBNB.png",
+      "extensions": {
+        "fewWrappedAddress": "0x05e6c1B4Da05c41c86c35Ce42a8a222C1a450167",
+        "fewName": "Few Wrapped Wrapped BNB",
+        "fewSymbol": "fwWBNB"
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x55d398326f99059fF775485246999027B3197955",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDT.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x95b5aEfbcC9e6E462f21E0847e2d90b89b7Cd028",
+        "fewName": "Few Wrapped Tether USD",
+        "fewSymbol": "fwUSDT"
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/USDC/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0xACD988Db88EF410ac0415bB2e47794C0C27B6B10",
+        "fewName": "Few Wrapped USD Coin",
+        "fewSymbol": "fwUSDC"
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+      "name": "PancakeSwap Token",
+      "symbol": "Cake",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_CAKE.png",
+      "extensions": {
+        "fewWrappedAddress": "0xFD5Af3049b158a772f26C56B02b85B9702CEe331",
+        "fewName": "Few Wrapped PancakeSwap Token",
+        "fewSymbol": "fwCake"
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+      "name": "BTCB Token",
+      "symbol": "BTCB",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_BTCB.png",
+      "extensions": {
+        "fewWrappedAddress": "0x7e9FA29617A9bDF7c7e8b29E46028fC554CA9F11",
+        "fewName": "Few Wrapped BTCB Token",
+        "fewSymbol": "fwBTCB"
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+      "name": "Ethereum Token",
+      "symbol": "ETH",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/WETH/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0x86fa03945646a99A03543e7e0036361Ffadc73E6",
+        "fewName": "Few Wrapped Ethereum Token",
+        "fewSymbol": "fwETH"
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x05e6c1B4Da05c41c86c35Ce42a8a222C1a450167",
+      "name": "Few Wrapped Wrapped BNB",
+      "symbol": "fwWBNB",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_WBNB.png",
+      "extensions": {}
+    },
+    {
+      "chainId": 56,
+      "address": "0x95b5aEfbcC9e6E462f21E0847e2d90b89b7Cd028",
+      "name": "Few Wrapped Tether USD",
+      "symbol": "fwUSDT",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDT.svg",
+      "extensions": {}
+    },
+    {
+      "chainId": 56,
+      "address": "0xACD988Db88EF410ac0415bB2e47794C0C27B6B10",
+      "name": "Few Wrapped USD Coin",
+      "symbol": "fwUSDC",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/USDC/logo.png",
+      "extensions": {}
+    },
+    {
+      "chainId": 56,
+      "address": "0xFD5Af3049b158a772f26C56B02b85B9702CEe331",
+      "name": "Few Wrapped PancakeSwap Token",
+      "symbol": "fwCake",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_CAKE.png",
+      "extensions": {}
+    },
+    {
+      "chainId": 56,
+      "address": "0x7e9FA29617A9bDF7c7e8b29E46028fC554CA9F11",
+      "name": "Few Wrapped BTCB Token",
+      "symbol": "fwBTCB",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_BTCB.png",
+      "extensions": {}
+    },
+    {
+      "chainId": 56,
+      "address": "0x86fa03945646a99A03543e7e0036361Ffadc73E6",
+      "name": "Few Wrapped Ethereum Token",
+      "symbol": "fwETH",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/WETH/logo.png",
+      "extensions": {}
     }
   ],
   "version": {
-    "major": 21,
+    "major": 22,
     "minor": 0,
-    "patch": 34
+    "patch": 35
   }
 }
