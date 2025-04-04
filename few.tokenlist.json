@@ -800,11 +800,50 @@
         "fewName": "Few Wrapped Ethereum Token",
         "fewSymbol": "fwETH"
       }
+    },
+    {
+      "chainId": 1514,
+      "address": "0x1514000000000000000000000000000000000000",
+      "name": "Wrapped IP",
+      "symbol": "WIP",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_WIP.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x088dE218b725975E6285995C25Ce3706BAe0f4Ec",
+        "fewName": "Few Wrapped Wrapped IP",
+        "fewSymbol": "fwWIP"
+      }
+    },
+    {
+      "chainId": 1514,
+      "address": "0xF1815bd50389c46847f0Bda824eC8da914045D14",
+      "name": "Stargate Bridged USDC Story",
+      "symbol": "USDCE",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDC.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x402dD950dD789E5C109363c9c6Fde21c847ab57e",
+        "fewName": "Few Wrapped Stargate Bridged USDC Story",
+        "fewSymbol": "fwUSDCE"
+      }
+    },
+    {
+      "chainId": 1514,
+      "address": "0xBAb93B7ad7fE8692A878B95a8e689423437cc500",
+      "name": "Ethereum Token",
+      "symbol": "ETH",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/WETH/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0xd8c7a7fFab911A1F569AAd9dDd84Ef8E02D786fc",
+        "fewName": "Few Wrapped Ethereum Token",
+        "fewSymbol": "fwETH"
+      }
     }
   ],
   "version": {
-    "major": 29,
+    "major": 30,
     "minor": 0,
-    "patch": 43
+    "patch": 44
   }
 }
