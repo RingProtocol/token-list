@@ -3,6 +3,7 @@ const axios = require('axios');
 const path = require('path');
 const { getFewTokenFromOriginalToken } = require("few-v2-sdk-multiple-network-9");
 const { Token } = require("few-sdk-core-multiple-network-6");
+const { ethers } = require('ethers');
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -26,27 +27,26 @@ async function main() {
     const ringxJson = JSON.parse(fileContent);
     const ringxTokens = ringxJson.tokens.filter(token => token.chainId === CHAIN_ID);
 
-    // 3. create token list
-    const ringxAddresses = new Set(ringxTokens.map(t => t.address));
+    // 3. create address set (with checksum format)
+    const ringxAddresses = new Set(ringxTokens.map(t => ethers.utils.getAddress(t.address)));
 
     // 4. generate newTokens：in swapnetTokens but not in ringxTokens
     const newTokens = swapnetTokens
-      .filter(t => !ringxTokens.some(r => r.address.toLowerCase() === t.address.toLowerCase()))
+      .filter(t => !ringxAddresses.has(ethers.utils.getAddress(t.address)))
       .map(t => {
-        // create Token and call getFewTokenFromOriginalToken
+        const checksummedAddress = ethers.utils.getAddress(t.address);
         const originalToken = new Token(
           t.chainId,
-          t.address,
+          checksummedAddress,
           t.decimals,
           t.symbol,
           t.name
         );
         const fewToken = getFewTokenFromOriginalToken(originalToken, t.chainId);
 
-        // contruct new token object，include extensions
         return {
           chainId: t.chainId,
-          address: t.address,
+          address: checksummedAddress,
           name: t.name,
           symbol: t.symbol,
           decimals: t.decimals,
@@ -59,7 +59,7 @@ async function main() {
         };
       });
 
-    // print result（formatter as ringx.tokenlist.json）
+    // print result
     const result = {
       tokens: newTokens,
     };
@@ -68,9 +68,9 @@ async function main() {
 
     // write file
     fs.writeFileSync(path.join(__dirname, 'newTokens.json'), JSON.stringify(result, null, 2));
-    console.log(`write ${result.tokens.length} token to newTokens.json file!`);
+    console.log(`✅ Wrote ${result.tokens.length} new tokens to newTokens.json`);
   } catch (error) {
-    console.error('error: ', error.message);
+    console.error('❌ Error:', error.message);
   }
 }
 
