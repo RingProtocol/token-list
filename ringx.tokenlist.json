@@ -1203,7 +1203,7 @@
     {
       "chainId": 1,
       "address": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
-      "name": "Wrapped Uniswap",
+      "name": "Uniswap",
       "symbol": "UNI",
       "decimals": 18,
       "logoURI": "https://ethereum-optimism.github.io/data/UNI/logo.png",
@@ -1211,6 +1211,45 @@
         "fewWrappedAddress": "0xE8E1F50392Bd61D0F8F48E8E7aF51D3b8a52090a",
         "fewName": "Few Wrapped Wrapped Uniswap",
         "fewSymbol": "fwUNI"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf",
+      "name": "Coinbase Wrapped BTC",
+      "symbol": "cbBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0xDbf1703e5d29afEfbF1bD958ce7a6023c67f3E5d",
+        "fewName": "Few Wrapped Coinbase Wrapped BTC",
+        "fewSymbol": "fwcbBTC"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x85f138bfEE4ef8e540890CFb48F620571d67Eda3",
+      "name": "Wrapped AVAX",
+      "symbol": "WAVAX",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0x85f138bfEE4ef8e540890CFb48F620571d67Eda3/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0x8C337d94aAd2cBC24f966d2B747fEc1c80e97D12",
+        "fewName": "Few Wrapped Wrapped AVAX",
+        "fewSymbol": "fwWAVAX"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xD31a59c85aE9D8edEFeC411D448f90841571b89c",
+      "name": "Wrapped SOL",
+      "symbol": "SOL",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0xD31a59c85aE9D8edEFeC411D448f90841571b89c/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0xb84dF8A4659bb12917ea90cE19BFC9D87b8DEc2b",
+        "fewName": "Few Wrapped Wrapped SOL",
+        "fewSymbol": "fwSOL"
       }
     },
     {
@@ -1263,6 +1302,19 @@
         "fewWrappedAddress": "0x39D1912a8EA92208457a19b71E9114680f867BcD",
         "fewName": "Few Wrapped Adventure Gold",
         "fewSymbol": "fwAGLD"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB",
+      "name": "CoW Protocol Token",
+      "symbol": "COW",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0xe1850dd20349CDaC18c597D80130e837b6DE0d1d",
+        "fewName": "Few Wrapped CoW Protocol Token",
+        "fewSymbol": "fwCOW"
       }
     },
     {
