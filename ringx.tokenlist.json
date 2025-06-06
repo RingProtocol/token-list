@@ -3565,11 +3565,76 @@
         "fewName": "Few Wrapped The Graph",
         "fewSymbol": "fwGRT"
       }
+    },
+    {
+      "chainId": 1,
+      "address": "0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
+      "name": "USDe",
+      "symbol": "USDe",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/33613/standard/usde.png?1733810059",
+      "extensions": {
+        "fewWrappedAddress": "0x459F878908B5D6E8A0f2eb089b0Cd29D9766aFe5",
+        "fewName": "Few Wrapped USDe",
+        "fewSymbol": "fwUSDe"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x6f40d4A6237C257fff2dB00FA0510DeEECd303eb",
+      "name": "Fluid",
+      "symbol": "FLUID",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0x6f40d4A6237C257fff2dB00FA0510DeEECd303eb/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0x11ae90C143C310C891172C36a79742D0825A0257",
+        "fewName": "Few Wrapped Instadapp",
+        "fewSymbol": "fwINST"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x808507121B80c02388fAd14726482e061B8da827",
+      "name": "Pendle",
+      "symbol": "PENDLE",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0x808507121B80c02388fAd14726482e061B8da827/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0x953EEFD5536989A4Eee15C7481730410458b0835",
+        "fewName": "Few Wrapped Pendle",
+        "fewSymbol": "fwPENDLE"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x56072C95FAA701256059aa122697B133aDEd9279",
+      "name": "SKY Governance Token",
+      "symbol": "SKY",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0x56072C95FAA701256059aa122697B133aDEd9279/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0xD108C815D0D093Cf54a9E24632A362e7b7ebE064",
+        "fewName": "Few Wrapped SKY Governance Token",
+        "fewSymbol": "fwSKY"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x68749665FF8D2d112Fa859AA293F07A622782F38",
+      "name": "Tether Gold",
+      "symbol": "XAUt",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0x68749665FF8D2d112Fa859AA293F07A622782F38/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0x46D73DeE442a7BA2c1c6948A1114ACBF69d76Ccd",
+        "fewName": "Few Wrapped Tether Gold",
+        "fewSymbol": "fwXAUt"
+      }
     }
   ],
   "version": {
-    "major": 37,
+    "major": 38,
     "minor": 1,
-    "patch": 48
+    "patch": 49
   }
 }
