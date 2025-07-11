@@ -5,5 +5,8 @@
     "dotenv": "^16.5.0",
     "ethers": "5",
     "few-v2-sdk-multiple-network-9": "^3.2.0"
+  },
+  "scripts": {
+    "generate:tokenlist": "node generateTokenList.js"
   }
 }

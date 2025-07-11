@@ -2,7 +2,16 @@
 
 See https://github.com/Uniswap/token-lists or https://tokenlists.org/.
 
-## 配置
+## 基础使用
+
+### 运行脚本
+使用以下命令运行脚本以生成 `[chainName].tokenlist.json`：
+```bash
+yarn generate:tokenlist
+```
+运行命令后会在 `all` 目录下生成对应的 `tokenlist` 文件，如果需要特殊配置的话直接修改 `generateTokenList.js` 这个文件
+
+## RingX 使用
 
 ### 配置 SWAPNET_KEY（必需）
 在项目根目录下创建 `.env` 文件，内容如下：
@@ -11,7 +20,12 @@ SWAPNET_KEY=your_swapnet_api_key
 ```
 将 `your_swapnet_api_key` 替换为您的实际 SwapNet API 密钥。此密钥为访问 SwapNet API 所必需，否则脚本将无法运行。
 
-## 使用
+
+### 运行脚本
+使用以下命令运行脚本以生成 `[chainName].tokenlist.json`：
+```bash
+yarn generate:tokenlist
+```
 
 ### 运行脚本
 使用以下命令运行脚本以生成 `newTokens.json`：
