@@ -839,11 +839,50 @@
         "fewName": "Few Wrapped Ethereum Token",
         "fewSymbol": "fwETH"
       }
+    },
+    {
+      "chainId": 999,
+      "address": "0x5555555555555555555555555555555555555555",
+      "name": "Wrapped Hyper",
+      "symbol": "WHYPE",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_HYPE.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x9e1148bC3665a9f7C35F313d89c0432c34928AEf",
+        "fewName": "Few Wrapped Wrapped HYPE",
+        "fewSymbol": "fwWHYPE"
+      }
+    },
+    {
+      "chainId": 999,
+      "address": "0x27ec642013bcb3d80ca3706599d3cda04f6f4452",
+      "name": "Pump",
+      "symbol": "PUMP",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_PUMP.png",
+      "extensions": {
+        "fewWrappedAddress": "0xdaabd0684FB3dAA286ab24fa2EbAefF47Dd67B0d",
+        "fewName": "Few Wrapped Pump",
+        "fewSymbol": "fwPUMP"
+      }
+    },
+    {
+      "chainId": 999,
+      "address": "0x068f321fa8fb9f0d135f290ef6a3e2813e1c8a29",
+      "name": "Solana",
+      "symbol": "SOL",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_SOL.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x488afBEC68f8BEeD2512FE228E50227160c19339",
+        "fewName": "Few Wrapped Solana",
+        "fewSymbol": "fwSOL"
+      }
     }
   ],
   "version": {
-    "major": 30,
+    "major": 31,
     "minor": 0,
-    "patch": 44
+    "patch": 45
   }
 }
