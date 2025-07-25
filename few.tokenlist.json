@@ -878,11 +878,24 @@
         "fewName": "Few Wrapped Solana",
         "fewSymbol": "fwSOL"
       }
+    },
+    {
+      "chainId": 999,
+      "address": "0xb8ce59fc3717ada4c02eadf9682a9e934f625ebb",
+      "name": "USD₮0",
+      "symbol": "USD₮0",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDT.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x7576dd9a2775bFd789616d9eA7A2af21d06782D0",
+        "fewName": "Few Wrapped USD₮0",
+        "fewSymbol": "fwUSD₮0"
+      }
     }
   ],
   "version": {
-    "major": 31,
+    "major": 32,
     "minor": 0,
-    "patch": 45
+    "patch": 46
   }
 }
