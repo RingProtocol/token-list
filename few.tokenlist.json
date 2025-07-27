@@ -891,11 +891,24 @@
         "fewName": "Few Wrapped USD₮0",
         "fewSymbol": "fwUSD₮0"
       }
+    },
+    {
+      "chainId": 999,
+      "address": "0xBe6727B535545C67d5cAa73dEa54865B92CF7907",
+      "name": "Unit Ethereum",
+      "symbol": "UETH",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/WETH/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0x0C47cbbEDE5d8c6f9614cF770C26c3315205C397",
+        "fewName": "Few Wrapped Unit Ethereum",
+        "fewSymbol": "fwUETH"
+      }
     }
   ],
   "version": {
-    "major": 32,
+    "major": 33,
     "minor": 0,
-    "patch": 46
+    "patch": 47
   }
 }
