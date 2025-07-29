@@ -38,8 +38,12 @@ async function main() {
       const response = await axios.get(API_URL);
       const allTokens = response.data || [];
 
-      // 2.filter chainId
-      const tokens = allTokens.tokens.filter(token => token.chainId === CHAIN_ID);
+      // 2.filter chainId and logoURI
+      const tokens = allTokens.tokens.filter(token => 
+        token.chainId === CHAIN_ID && 
+        token.logoURI && 
+        token.logoURI.trim() !== ''
+      );
 
       // 3. generate newTokens：in swapnetTokens but not in ringxTokens
       const newTokens = tokens.map(t => {
@@ -59,7 +63,7 @@ async function main() {
           name: t.name,
           symbol: t.symbol,
           decimals: t.decimals,
-          logoURI: t.logoURI || '',
+          logoURI: t.logoURI,
           extensions: {
             fewWrappedAddress: fewToken.address,
             fewName: `Few Wrapped ${t.name}`.length > 42 
@@ -72,7 +76,11 @@ async function main() {
 
       // print result
       const result = {
-        ...allTokens,
+        name: allTokens.name,
+        logoURI: allTokens.logoURI,
+        keywords: allTokens.keywords,
+        timestamp: allTokens.timestamp,
+        version: allTokens.version,
         tokens: newTokens,
       };
 

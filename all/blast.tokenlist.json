@@ -5,6 +5,11 @@
     "defi"
   ],
   "timestamp": "2025-07-26T09:00:22.705+00:00",
+  "version": {
+    "major": 35,
+    "minor": 0,
+    "patch": 0
+  },
   "tokens": [
     {
       "chainId": 81457,
@@ -1568,19 +1573,6 @@
     },
     {
       "chainId": 81457,
-      "address": "0x9a50953716bA58e3d6719Ea5c437452ac578705F",
-      "name": "MetaStreet V2 mwstETH WPUNKS 20",
-      "symbol": "PUNKETH-20",
-      "decimals": 18,
-      "logoURI": "",
-      "extensions": {
-        "fewWrappedAddress": "0x4A4633604b349dCE325a99EF7375dD30BEe13f00",
-        "fewName": "Few Wrapped MetaStreet V2 mwstETH WPUNKS 2",
-        "fewSymbol": "fwPUNKETH-20"
-      }
-    },
-    {
-      "chainId": 81457,
       "address": "0x9e20461bc2c4c980f62f1B279D71734207a6A356",
       "name": "OmniCat",
       "symbol": "OMNI",
@@ -1943,10 +1935,5 @@
         "fewSymbol": "fwSLXD"
       }
     }
-  ],
-  "version": {
-    "major": 35,
-    "minor": 0,
-    "patch": 0
-  }
+  ]
 }
