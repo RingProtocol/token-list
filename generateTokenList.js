@@ -62,7 +62,9 @@ async function main() {
           logoURI: t.logoURI || '',
           extensions: {
             fewWrappedAddress: fewToken.address,
-            fewName: `Few Wrapped ${t.name}`,
+            fewName: `Few Wrapped ${t.name}`.length > 42 
+              ? `Few Wrapped ${t.name}`.substring(0, 42)
+              : `Few Wrapped ${t.name}`,
             fewSymbol: `fw${t.symbol}`
           }
         };
