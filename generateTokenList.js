@@ -59,7 +59,7 @@ async function main() {
           name: t.name,
           symbol: t.symbol,
           decimals: t.decimals,
-          logoURI: t.metadata?.logoURI || '',
+          logoURI: t.logoURI || '',
           extensions: {
             fewWrappedAddress: fewToken.address,
             fewName: `Few Wrapped ${t.name}`,
