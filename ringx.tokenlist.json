@@ -1228,6 +1228,32 @@
     },
     {
       "chainId": 1,
+      "address": "0xdA5e1988097297dCdc1f90D4dFE7909e847CBeF6",
+      "name": "World Liberty Financial",
+      "symbol": "WLFI",
+      "decimals": 18,
+      "logoURI": "https://coin-images.coingecko.com/coins/images/50767/large/wlfi.png?1756438915",
+      "extensions": {
+        "fewWrappedAddress": "0x2164Bd3e2D8b58850f646f35ab7c95360327E7f3",
+        "fewName": "Few Wrapped World Liberty Financial",
+        "fewSymbol": "fwWLFI"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x58D97B57BB95320F9a05dC918Aef65434969c2B2",
+      "name": "Morpho Token",
+      "symbol": "MORPHO",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/29837/standard/Morpho-token-icon.png?1726771230",
+      "extensions": {
+        "fewWrappedAddress": "0xeBC5e4bf39481d8D3B2E4edE7c834cf7A5177220",
+        "fewName": "Few Wrapped Morpho Token",
+        "fewSymbol": "fwMORPHO"
+      }
+    },
+    {
+      "chainId": 1,
       "address": "0x85f138bfEE4ef8e540890CFb48F620571d67Eda3",
       "name": "Wrapped AVAX",
       "symbol": "WAVAX",
@@ -1276,6 +1302,32 @@
         "fewWrappedAddress": "0x3766CF12211f2eC589e857b2fe7Ed19CF1D7bBF4",
         "fewName": "Few Wrapped Aave",
         "fewSymbol": "fwAAVE"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x9DFAD1b7102D46b1b197b90095B5c4E9f5845BBA",
+      "name": "Botto",
+      "symbol": "BOTTO",
+      "decimals": 18,
+      "logoURI": "https://coin-images.coingecko.com/coins/images/18892/large/bottos_logo.jpg?1696518350",
+      "extensions": {
+        "fewWrappedAddress": "0xf13d62f8692cfaa4f5F3Cb6c2EC88Bc84E9A7419",
+        "fewName": "Few Wrapped Botto",
+        "fewSymbol": "fwBOTTO"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x57e114B691Db790C35207b2e685D4A43181e6061",
+      "name": "ENA",
+      "symbol": "ENA",
+      "decimals": 18,
+      "logoURI": "https://coin-images.coingecko.com/coins/images/36530/large/ethena.png?1711701436",
+      "extensions": {
+        "fewWrappedAddress": "0xA19cB4c1cC02252861C9Caa9b823CCe18E13789d",
+        "fewName": "Few Wrapped ENA",
+        "fewSymbol": "fwENA"
       }
     },
     {
@@ -5350,7 +5402,7 @@
   ],
   "version": {
     "major": 40,
-    "minor": 2,
-    "patch": 51
+    "minor": 3,
+    "patch": 52
   }
 }
