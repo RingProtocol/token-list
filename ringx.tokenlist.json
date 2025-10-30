@@ -1228,6 +1228,71 @@
     },
     {
       "chainId": 1,
+      "address": "0x4EA40dcee961675683e0a2e1721Bd49CB9bca913",
+      "name": "Ring USD",
+      "symbol": "USDR",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/69350/standard/logo_USDR_color_512x512.png?1758260860",
+      "extensions": {
+        "fewWrappedAddress": "0x29A294F8FE285Dfb259705213e375eCb7Fcf9d9b",
+        "fewName": "Few Wrapped Ring USD",
+        "fewSymbol": "fwUSDR"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+      "name": "Wrapped eETH",
+      "symbol": "weETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_weETH.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x9553d5F1f564EDE30f5a9F0274cD0AF7A00546e7",
+        "fewName": "Few Wrapped weETH",
+        "fewSymbol": "fwweETH"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xdC035D45d973E3EC169d2276DDab16f1e407384F",
+      "name": "USDS Stablecoin",
+      "symbol": "USDS",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/39926/standard/usds.webp?1726666683",
+      "extensions": {
+        "fewWrappedAddress": "0xD777151C92C05fEa839b2c21b345a78e1F1163Fe",
+        "fewName": "Few Wrapped USDS Stablecoin",
+        "fewSymbol": "fwUSDS"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xacA92E438df0B2401fF60dA7E4337B687a2435DA",
+      "name": "MetaMask USD",
+      "symbol": "mUSD",
+      "decimals": 6,
+      "logoURI": "https://assets.coingecko.com/coins/images/68451/standard/MetaMask-mUSD-Icon-200x200.png?1755878384",
+      "extensions": {
+        "fewWrappedAddress": "0xe0b7A3Fa31A81b671DFeB8ae3B9Ae1614EC30fAC",
+        "fewName": "Few Wrapped MetaMask USD",
+        "fewSymbol": "fwmUSD"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x3c3a81e81dc49A522A592e7622A7E711c06bf354",
+      "name": "Mantle",
+      "symbol": "MNT",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/30980/standard/Mantle-Logo-mark.png?1739213200",
+      "extensions": {
+        "fewWrappedAddress": "0xC46C08D19312a3F92Ead748157F062b1F83Fd433",
+        "fewName": "Few Wrapped Mantle",
+        "fewSymbol": "fwMNT"
+      }
+    },
+    {
+      "chainId": 1,
       "address": "0xdA5e1988097297dCdc1f90D4dFE7909e847CBeF6",
       "name": "World Liberty Financial",
       "symbol": "WLFI",
@@ -5403,6 +5468,6 @@
   "version": {
     "major": 40,
     "minor": 3,
-    "patch": 52
+    "patch": 53
   }
 }
