@@ -956,11 +956,37 @@
         "fewName": "Few Wrapped Unit Ethereum",
         "fewSymbol": "fwUETH"
       }
+    },
+    {
+      "chainId": 999,
+      "address": "0xb88339CB7199b77E23DB6E890353E22632Ba630f",
+      "name": "USDC",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_USDC.svg",
+      "extensions": {
+        "fewWrappedAddress": "0xd2646b9B02859416D8cBc759F85f0676f6E19974",
+        "fewName": "Few Wrapped USDC",
+        "fewSymbol": "fwUSDC"
+      }
+    },
+    {
+      "chainId": 999,
+      "address": "0x111111a1a0667d36bD57c0A9f569b98057111111",
+      "name": "USDH",
+      "symbol": "USDH",
+      "decimals": 6,
+      "logoURI": "https://coin-images.coingecko.com/coins/images/69484/large/usdh.png?1758728903",
+      "extensions": {
+        "fewWrappedAddress": "0x09D21E89EF332347eb3E1E496f1265a600e364C1",
+        "fewName": "Few Wrapped USDH",
+        "fewSymbol": "fwUSDH"
+      }
     }
   ],
   "version": {
-    "major": 34,
+    "major": 35,
     "minor": 0,
-    "patch": 48
+    "patch": 49
   }
 }
