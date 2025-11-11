@@ -256,6 +256,58 @@
       }
     },
     {
+      "chainId": 1,
+      "address": "0x4EA40dcee961675683e0a2e1721Bd49CB9bca913",
+      "name": "Ring USD",
+      "symbol": "USDR",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/69350/standard/logo_USDR_color_512x512.png?1758260860",
+      "extensions": {
+        "fewWrappedAddress": "0x29A294F8FE285Dfb259705213e375eCb7Fcf9d9b",
+        "fewName": "Few Wrapped Ring USD",
+        "fewSymbol": "fwUSDR"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+      "name": "Wrapped eETH",
+      "symbol": "weETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_weETH.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x9553d5F1f564EDE30f5a9F0274cD0AF7A00546e7",
+        "fewName": "Few Wrapped weETH",
+        "fewSymbol": "fwweETH"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "name": "Wrapped stETH",
+      "symbol": "wstETH",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/18834/thumb/wstETH.png?1696518295",
+      "extensions": {
+        "fewWrappedAddress": "0xB90e63487bc6A4fa3d58F707510Dab3C28a63137",
+        "fewName": "Few Wrapped Wrapped stETH",
+        "fewSymbol": "fwwstETH"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x85F17Cf997934a597031b2E18a9aB6ebD4B9f6a4",
+      "name": "NEAR",
+      "symbol": "NEAR",
+      "decimals": 24,
+      "logoURI": "https://assets.coingecko.com/coins/images/10365/large/near.jpg?1696510367",
+      "extensions": {
+        "fewWrappedAddress": "0x199FE9826A45dBEA191498f23F791c18C67b94e3",
+        "fewName": "Few Wrapped NEAR",
+        "fewSymbol": "fwNEAR"
+      }
+    },
+    {
       "chainId": 168587773,
       "address": "0x7647a41596c1Ca0127BaCaa25205b310A0436B4C",
       "name": "Ring Governance Token",
@@ -907,8 +959,8 @@
     }
   ],
   "version": {
-    "major": 33,
+    "major": 34,
     "minor": 0,
-    "patch": 47
+    "patch": 48
   }
 }

@@ -1137,6 +1137,32 @@
     },
     {
       "chainId": 1,
+      "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "name": "Wrapped stETH",
+      "symbol": "wstETH",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/18834/thumb/wstETH.png?1696518295",
+      "extensions": {
+        "fewWrappedAddress": "0xB90e63487bc6A4fa3d58F707510Dab3C28a63137",
+        "fewName": "Few Wrapped Wrapped stETH",
+        "fewSymbol": "fwwstETH"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x85F17Cf997934a597031b2E18a9aB6ebD4B9f6a4",
+      "name": "NEAR",
+      "symbol": "NEAR",
+      "decimals": 24,
+      "logoURI": "https://assets.coingecko.com/coins/images/10365/large/near.jpg?1696510367",
+      "extensions": {
+        "fewWrappedAddress": "0x199FE9826A45dBEA191498f23F791c18C67b94e3",
+        "fewName": "Few Wrapped NEAR",
+        "fewSymbol": "fwNEAR"
+      }
+    },
+    {
+      "chainId": 1,
       "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
       "name": "Wrapped Ether",
       "symbol": "WETH",
@@ -5466,8 +5492,8 @@
     }
   ],
   "version": {
-    "major": 40,
-    "minor": 3,
-    "patch": 53
+    "major": 41,
+    "minor": 4,
+    "patch": 54
   }
 }
