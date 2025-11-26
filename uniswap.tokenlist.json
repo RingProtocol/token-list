@@ -6,7 +6,7 @@
   ],
   "timestamp": "2025-07-28T16:02:37.378+00:00",
   "version": {
-    "major": 1029,
+    "major": 1030,
     "minor": 3,
     "patch": 0
   },
@@ -2831,6 +2831,33 @@
         "fewName": "Few Wrapped Rebasing USD",
         "fewSymbol": "fwUSDB"
       }
+    },
+    {
+      "chainId": 196,
+      "address": "0xe538905cf8410324e03A5A23C1c177a474D59b2b",
+      "name": "Wrapped OKB",
+      "symbol": "WOKB",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_HYPE.svg",
+      "extensions": {}
+    },
+    {
+      "chainId": 196,
+      "address": "0x5A77f1443D16ee5761d310e38b62f77f726bC71c",
+      "name": "Ethereum Token",
+      "symbol": "ETH",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/WETH/logo.png",
+      "extensions": {}
+    },
+    {
+      "chainId": 196,
+      "address": "0x74b7f16337b8972027f6196a17a631ac6de26d22",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://ethereum-optimism.github.io/data/USDC/logo.png",
+      "extensions": {}
     }
   ]
 }
