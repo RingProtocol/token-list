@@ -4945,6 +4945,32 @@
       }
     },
     {
+      "chainId": 1,
+      "address": "0x3632dea96a953c11dac2f00b4a05a32cd1063fae",
+      "name": "Circle Internet Group (Ondo Tokenized)",
+      "symbol": "CRCLon",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0x3632dea96a953c11dac2f00b4a05a32cd1063fae/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0xA9B48144D457294340f1e87824D84024825B66d5",
+        "fewName": "Few Wrapped Circle Internet Group (Ondo Tokenized)",
+        "fewSymbol": "fwCRCLon"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xf042cfa86cf1d598a75bdb55c3507a1f39f9493b",
+      "name": "Coinbase (Ondo Tokenized)",
+      "symbol": "COINon",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0xf042cfa86cf1d598a75bdb55c3507a1f39f9493b/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0x5b6727f343289bc69ba1e8d6589f0c7d6eafc468",
+        "fewName": "Few Wrapped Coinbase (Ondo Tokenized)",
+        "fewSymbol": "fwCOINon"
+      }
+    },
+    {
       "chainId": 168587773,
       "address": "0x7647a41596c1Ca0127BaCaa25205b310A0436B4C",
       "name": "Ring Governance Token",
@@ -5622,8 +5648,8 @@
     }
   ],
   "version": {
-    "major": 44,
+    "major": 45,
     "minor": 5,
-    "patch": 57
+    "patch": 58
   }
 }
