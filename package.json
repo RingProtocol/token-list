@@ -7,6 +7,7 @@
     "few-v2-sdk-multiple-network-9": "^3.2.0"
   },
   "scripts": {
-    "generate:tokenlist": "node generateTokenList.js"
+    "generate:tokenlist": "node generateTokenList.js",
+    "generate:stock-tokenlist": "node generateStockTokenList.js"
   }
 }
