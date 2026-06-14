@@ -1,0 +1,46 @@
+name: Update stock token list
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs every day at 08:00 UTC / 16:00 Asia/Shanghai.
+    - cron: "0 8 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install Yarn
+        run: npm install --global yarn@1.22.22
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Generate stock token list
+        run: yarn generate:stock-tokenlist
+
+      - name: Commit updated stock token list
+        run: |
+          if git diff --quiet -- stock.tokenlist.json; then
+            echo "No stock token list changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stock.tokenlist.json
+          git commit -m "chore: update stock token list"
+          git push
