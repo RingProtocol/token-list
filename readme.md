@@ -59,3 +59,28 @@ node generateRingXTokenList.js
 ## 错误处理
 如果 `SWAPNET_KEY` 缺失或无效，或者无法读取 `ringx.tokenlist.json` 文件，脚本将在控制台输出错误信息。
 
+## Stock token list 自动更新
+
+`generateStockTokenList.js` 使用 Enso API 获取 Ondo GM token 数据。GitHub Actions 的 runner 可能会被 Enso API 拒绝裸请求，因此自动更新需要配置 API key，否则会在 `Generate stock token list` 步骤返回 403。
+
+### 本地运行
+
+本地可以直接运行。如果本地也遇到 403，在项目根目录的 `.env` 中配置：
+
+```
+ENSO_API_KEY=your_enso_api_key
+```
+
+然后运行：
+
+```bash
+yarn generate:stock-tokenlist
+```
+
+### GitHub Actions
+
+在仓库 `Settings -> Secrets and variables -> Actions -> New repository secret` 中添加：
+
+```
+ENSO_API_KEY=your_enso_api_key
+```

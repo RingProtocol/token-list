@@ -30,6 +30,8 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Generate stock token list
+        env:
+          ENSO_API_KEY: ${{ secrets.ENSO_API_KEY }}
         run: yarn generate:stock-tokenlist
 
       - name: Commit updated stock token list

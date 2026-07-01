@@ -11,6 +11,19 @@ dotenv.config();
 const CHAIN_ID = 1;
 const API_URL = 'https://api.enso.build/api/v1/tokens?protocolSlug=ondo-gm&includeMetadata=true';
 const TOKENLIST_PATH = path.join(__dirname, 'stock.tokenlist.json');
+const ENSO_API_KEY = process.env.ENSO_API_KEY;
+
+function getEnsoRequestConfig() {
+  if (!ENSO_API_KEY) {
+    return {};
+  }
+
+  return {
+    headers: {
+      Authorization: `Bearer ${ENSO_API_KEY}`
+    }
+  };
+}
 
 function normalizeAddress(address) {
   return ethers.utils.getAddress(address);
@@ -65,7 +78,7 @@ async function main() {
         .map(token => tokenKey(token.chainId, token.address))
     );
 
-    const response = await axios.get(API_URL);
+    const response = await axios.get(API_URL, getEnsoRequestConfig());
     const ensoTokens = Array.isArray(response.data?.data) ? response.data.data : [];
     const newTokens = ensoTokens
       .filter(token => token.chainId === CHAIN_ID && token.address)
@@ -92,6 +105,12 @@ async function main() {
     fs.writeFileSync(TOKENLIST_PATH, JSON.stringify(result, null, 2));
     console.log(`Wrote ${newTokens.length} new stock tokens to stock.tokenlist.json`);
   } catch (error) {
+    if (error.response?.status === 403) {
+      console.error('Error: Enso API returned 403. Set ENSO_API_KEY in .env or GitHub Actions secrets.');
+      process.exitCode = 1;
+      return;
+    }
+
     console.error('Error:', error.message);
     process.exitCode = 1;
   }
