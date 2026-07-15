@@ -61,7 +61,9 @@ node generateRingXTokenList.js
 
 ## Stock token list 自动更新
 
-`generateStockTokenList.js` 使用 Enso API 获取 Ondo GM token 数据。GitHub Actions 的 runner 可能会被 Enso API 拒绝裸请求，因此自动更新需要配置 API key，否则会在 `Generate stock token list` 步骤返回 403。
+`generateStockTokenList.js` 使用 Enso API 获取 Ethereum Ondo GM token 数据，并使用 Binance Web3 API 获取 BNB Chain bStock token 数据。运行一次 `yarn generate:stock-tokenlist` 会将两个来源的新 token 合并写入 `stock.tokenlist.json`。
+
+GitHub Actions 的 runner 可能会被 Enso API 拒绝裸请求，因此自动更新需要配置 API key，否则会在 `Generate stock token list` 步骤返回 403。若 Enso 返回 401 且错误为 `legacy_key_retired`，需要在 https://developers.enso.build 重新生成 key。
 
 ### 本地运行
 
@@ -69,7 +71,11 @@ node generateRingXTokenList.js
 
 ```
 ENSO_API_KEY=your_enso_api_key
+BINANCE_WEB3_API_KEY=your_binance_web3_api_key
+BINANCE_WEB3_API_SECRET=your_binance_web3_api_secret
 ```
+
+`BINANCE_WEB3_API_URL` 可选，默认是 `https://web3.binance.com/build`。
 
 然后运行：
 
