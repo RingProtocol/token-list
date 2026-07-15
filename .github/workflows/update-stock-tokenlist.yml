@@ -32,6 +32,8 @@ jobs:
       - name: Generate stock token list
         env:
           ENSO_API_KEY: ${{ secrets.ENSO_API_KEY }}
+          BINANCE_WEB3_API_KEY: ${{ secrets.BINANCE_WEB3_API_KEY }}
+          BINANCE_WEB3_API_SECRET: ${{ secrets.BINANCE_WEB3_API_SECRET }}
         run: yarn generate:stock-tokenlist
 
       - name: Commit updated stock token list
