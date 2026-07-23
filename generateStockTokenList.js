@@ -15,6 +15,10 @@ const ENSO_API_URL = 'https://api.enso.build/api/v1/tokens?protocolSlug=ondo-gm&
 const BINANCE_WEB3_API_URL = process.env.BINANCE_WEB3_API_URL || 'https://web3.binance.com/build';
 const BINANCE_RWA_TOKENS_PATH = '/api/v1/dex/market/rwa/tokens';
 const TOKENLIST_PATH = path.join(__dirname, 'stock.tokenlist.json');
+const STOCK_ASSETS_PATH = path.join(__dirname, 'assets', 'stock');
+const STOCK_ASSETS_RAW_URL = 'https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/stock';
+const ONDO_FINANCE_LOGO_URI = 'https://icons.llamao.fi/icons/protocols/ondo-finance';
+const LOGO_DOWNLOAD_CONCURRENCY = 10;
 const ENSO_API_KEY = process.env.ENSO_API_KEY;
 const BINANCE_WEB3_API_KEY = process.env.BINANCE_WEB3_API_KEY;
 const BINANCE_WEB3_API_SECRET = process.env.BINANCE_WEB3_API_SECRET;
@@ -45,6 +49,84 @@ function getLogoURI(token) {
   }
 
   return token.metadata?.logoURI || token.logoURI || token.logoUrl || token.tokenLogoUrl || token.logo || '';
+}
+
+function getLogoFilename(logoURI) {
+  try {
+    const pathname = new URL(logoURI).pathname;
+    return path.basename(decodeURIComponent(pathname));
+  } catch {
+    return '';
+  }
+}
+
+async function downloadLogo(logoURI, destinationPath) {
+  const response = await axios.get(logoURI, {
+    responseType: 'arraybuffer',
+    timeout: 30000
+  });
+  fs.writeFileSync(destinationPath, response.data);
+}
+
+async function localizeBnbStockTokenLogos(tokens) {
+  fs.mkdirSync(STOCK_ASSETS_PATH, { recursive: true });
+
+  const bnbTokens = tokens.filter(token => token.chainId === BNB_CHAIN_ID && token.logoURI);
+  let nextIndex = 0;
+  let localizedCount = 0;
+  let downloadedCount = 0;
+
+  async function worker() {
+    while (nextIndex < bnbTokens.length) {
+      const token = bnbTokens[nextIndex++];
+      const filename = getLogoFilename(token.logoURI);
+
+      if (!filename) {
+        throw new Error(`Cannot determine logo filename for ${token.symbol}: ${token.logoURI}`);
+      }
+
+      const rawLogoURI = `${STOCK_ASSETS_RAW_URL}/${encodeURIComponent(filename)}`;
+      const destinationPath = path.join(STOCK_ASSETS_PATH, filename);
+
+      if (!fs.existsSync(destinationPath)) {
+        await downloadLogo(token.logoURI, destinationPath);
+        downloadedCount += 1;
+      }
+
+      if (token.logoURI !== rawLogoURI) {
+        token.logoURI = rawLogoURI;
+        localizedCount += 1;
+      }
+    }
+  }
+
+  const workerCount = Math.min(LOGO_DOWNLOAD_CONCURRENCY, bnbTokens.length);
+  await Promise.all(Array.from({ length: workerCount }, () => worker()));
+
+  return { downloadedCount, localizedCount };
+}
+
+function syncEthereumStockTokenLogos(tokens) {
+  const bnbLogoURIByName = new Map(
+    tokens
+      .filter(token => token.chainId === BNB_CHAIN_ID && token.name && token.logoURI)
+      .map(token => [token.name, token.logoURI])
+  );
+  let syncedCount = 0;
+
+  for (const token of tokens) {
+    if (token.chainId !== ETHEREUM_CHAIN_ID || token.logoURI !== ONDO_FINANCE_LOGO_URI) {
+      continue;
+    }
+
+    const bnbLogoURI = bnbLogoURIByName.get(token.name);
+    if (bnbLogoURI) {
+      token.logoURI = bnbLogoURI;
+      syncedCount += 1;
+    }
+  }
+
+  return syncedCount;
 }
 
 function buildStockToken(token) {
@@ -191,26 +273,31 @@ async function main() {
     const newTokens = sourceTokens
       .filter(token => !existingTokenKeys.has(tokenKey(token.chainId, token.address)))
       .map(buildStockToken);
-
-    if (newTokens.length === 0) {
-      console.log('No new stock tokens found. stock.tokenlist.json was not changed.');
-      return;
-    }
+    const tokens = [...existingTokens, ...newTokens].map(token => ({ ...token }));
+    const { downloadedCount, localizedCount } = await localizeBnbStockTokenLogos(tokens);
+    const syncedEthereumLogoCount = syncEthereumStockTokenLogos(tokens);
 
     const nextVersion = {
       ...(stockJson.version || {}),
       patch: Number(stockJson.version?.patch || 0) + 1
     };
 
+    if (newTokens.length === 0 && localizedCount === 0 && syncedEthereumLogoCount === 0) {
+      console.log('No new stock tokens or stock logo changes found. stock.tokenlist.json was not changed.');
+      return;
+    }
+
     const result = {
       ...stockJson,
       timestamp: new Date().toISOString(),
-      tokens: [...existingTokens, ...newTokens],
+      tokens,
       version: nextVersion
     };
 
     fs.writeFileSync(TOKENLIST_PATH, JSON.stringify(result, null, 2));
     console.log(`Wrote ${newTokens.length} new stock tokens to stock.tokenlist.json`);
+    console.log(`Downloaded ${downloadedCount} BNB stock token logos and localized ${localizedCount} logo URIs.`);
+    console.log(`Synced ${syncedEthereumLogoCount} Ethereum stock token logo URIs from same-name BNB tokens.`);
     console.log(`Fetched ${ensoTokens.length} Ethereum stock tokens and ${binanceTokens.length} Binance bStock tokens.`);
   } catch (error) {
     if (error.response?.status === 401 || error.response?.status === 403) {
