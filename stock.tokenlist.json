@@ -5,7 +5,7 @@
     "stock",
     "ondo tokenized"
   ],
-  "timestamp": "2026-07-23T18:31:19.218Z",
+  "timestamp": "2026-07-24T10:02:41.192Z",
   "tokens": [
     {
       "chainId": 1,
@@ -11901,11 +11901,50 @@
         "fewName": "Few Wrapped Nokia (bStocks)",
         "fewSymbol": "fwNOKB"
       }
+    },
+    {
+      "chainId": 1,
+      "address": "0x67Eb4e3f674484CA980de8eB953AA435De2F23cb",
+      "name": "iShares High Yield Corporate Bond BuyWrite Strategy ETF (Ond",
+      "symbol": "HYGWON",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/102174744/thumb/hygwon_160x160.png?1784769740",
+      "extensions": {
+        "fewWrappedAddress": "0x25D12e330ae41aB7685337d2D3a7b65169876294",
+        "fewName": "Few Wrapped iShares High Yield Corporate Bond BuyWrite Strategy ETF (Ond",
+        "fewSymbol": "fwHYGWON"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x806Adf5Ef67EF4032Bcc8444f96ec777D2F43f66",
+      "name": "iShares Securitized Income Active ETF (Ondo Tokenized ETF)",
+      "symbol": "SECUON",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/102174743/thumb/secuon_160x160.png?1784769212",
+      "extensions": {
+        "fewWrappedAddress": "0x8e2c9DE4493fF45646963a9e5142435C268FF3be",
+        "fewName": "Few Wrapped iShares Securitized Income Active ETF (Ondo Tokenized ETF)",
+        "fewSymbol": "fwSECUON"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x8C2feFb7a5C26D44aA66Ae3023D96Af2EbAcAEBD",
+      "name": "iShares Systematic Bond ETF (Ondo Tokenized ETF)",
+      "symbol": "SYSBON",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/102174742/thumb/sysbon_160x160.png?1784768286",
+      "extensions": {
+        "fewWrappedAddress": "0x2fab830c6EA7ED351f4502F9478983495604d54B",
+        "fewName": "Few Wrapped iShares Systematic Bond ETF (Ondo Tokenized ETF)",
+        "fewSymbol": "fwSYSBON"
+      }
     }
   ],
   "version": {
     "major": 24,
     "minor": 1,
-    "patch": 42
+    "patch": 43
   }
 }
