@@ -9,9 +9,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: update-stock-tokenlist
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -34,17 +39,23 @@ jobs:
           ENSO_API_KEY: ${{ secrets.ENSO_API_KEY }}
           BINANCE_WEB3_API_KEY: ${{ secrets.BINANCE_WEB3_API_KEY }}
           BINANCE_WEB3_API_SECRET: ${{ secrets.BINANCE_WEB3_API_SECRET }}
+          BITGET_WEB3_API_KEY: ${{ secrets.BITGET_WEB3_API_KEY }}
+          BITGET_WEB3_API_SECRET: ${{ secrets.BITGET_WEB3_API_SECRET }}
         run: yarn generate:stock-tokenlist
+
+      - name: Validate generated token list
+        run: |
+          node -e "const list = require('./stock.tokenlist.json'); if (!Array.isArray(list.tokens)) throw new Error('stock.tokenlist.json must contain a tokens array'); console.log('Validated', list.tokens.length, 'stock tokens.');"
 
       - name: Commit updated stock token list
         run: |
-          if git diff --quiet -- stock.tokenlist.json; then
+          if [ -z "$(git status --porcelain -- stock.tokenlist.json assets/stock)" ]; then
             echo "No stock token list changes to commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stock.tokenlist.json
+          git add stock.tokenlist.json assets/stock
           git commit -m "chore: update stock token list"
           git push

@@ -14,6 +14,9 @@ const BNB_CHAIN_ID = 56;
 const ENSO_API_URL = 'https://api.enso.build/api/v1/tokens?protocolSlug=ondo-gm&includeMetadata=true';
 const BINANCE_WEB3_API_URL = process.env.BINANCE_WEB3_API_URL || 'https://web3.binance.com/build';
 const BINANCE_RWA_TOKENS_PATH = '/api/v1/dex/market/rwa/tokens';
+const BITGET_WEB3_API_URL = process.env.BITGET_WEB3_API_URL || 'https://bopenapi.bgwapi.io';
+const BITGET_RWA_STOCK_LIST_PATH = '/bgw-pro/market/v3/rwa/stockList';
+const BITGET_TOKEN_BATCH_INFO_PATH = '/bgw-pro/market/v3/coin/batchGetBaseInfo';
 const TOKENLIST_PATH = path.join(__dirname, 'stock.tokenlist.json');
 const STOCK_ASSETS_PATH = path.join(__dirname, 'assets', 'stock');
 const STOCK_ASSETS_RAW_URL = 'https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/stock';
@@ -22,6 +25,13 @@ const LOGO_DOWNLOAD_CONCURRENCY = 10;
 const ENSO_API_KEY = process.env.ENSO_API_KEY;
 const BINANCE_WEB3_API_KEY = process.env.BINANCE_WEB3_API_KEY;
 const BINANCE_WEB3_API_SECRET = process.env.BINANCE_WEB3_API_SECRET;
+const BITGET_WEB3_API_KEY = process.env.BITGET_WEB3_API_KEY;
+const BITGET_WEB3_API_SECRET = process.env.BITGET_WEB3_API_SECRET;
+const BITGET_TOKEN_INFO_BATCH_SIZE = 100;
+const BITGET_XSTOCKS_CHAINS = {
+  eth: ETHEREUM_CHAIN_ID,
+  bnb: BNB_CHAIN_ID
+};
 
 function getEnsoRequestConfig() {
   if (!ENSO_API_KEY) {
@@ -168,6 +178,132 @@ function signBinanceRequest(method, pathWithQuery, timestamp, body) {
   return crypto.createHmac('sha256', BINANCE_WEB3_API_SECRET).update(preHash, 'utf8').digest('base64');
 }
 
+function signBitgetRequest(apiPath, body, timestamp, queryParams = {}) {
+  const content = {
+    apiPath,
+    body,
+    'x-api-key': BITGET_WEB3_API_KEY,
+    'x-api-timestamp': timestamp,
+    ...Object.fromEntries(Object.entries(queryParams).map(([key, value]) => [key, String(value)]))
+  };
+  const sortedContent = Object.fromEntries(
+    Object.keys(content).sort().map(key => [key, content[key]])
+  );
+
+  return crypto
+    .createHmac('sha256', BITGET_WEB3_API_SECRET)
+    .update(JSON.stringify(sortedContent))
+    .digest('base64');
+}
+
+async function postBitget(pathname, payload) {
+  const body = JSON.stringify(payload);
+  const timestamp = Date.now().toString();
+  const signature = signBitgetRequest(pathname, body, timestamp);
+  const response = await axios.post(`${BITGET_WEB3_API_URL}${pathname}`, body, {
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': BITGET_WEB3_API_KEY,
+      'x-api-timestamp': timestamp,
+      'x-api-signature': signature
+    }
+  });
+
+  if (response.data?.status !== 0) {
+    const message = typeof response.data?.data === 'string'
+      ? response.data.data
+      : `status ${response.data?.status}`;
+    throw new Error(`Bitget API request failed for ${pathname}: ${message}`);
+  }
+
+  return response.data?.data;
+}
+
+function chunk(items, size) {
+  const chunks = [];
+  for (let index = 0; index < items.length; index += size) {
+    chunks.push(items.slice(index, index + size));
+  }
+  return chunks;
+}
+
+function bitgetTokenKey(chain, address) {
+  return `${chain}:${address.toLowerCase()}`;
+}
+
+async function fetchBitgetTokenMetadata(contracts) {
+  const metadataByToken = new Map();
+
+  for (const batch of chunk(contracts, BITGET_TOKEN_INFO_BATCH_SIZE)) {
+    const data = await postBitget(BITGET_TOKEN_BATCH_INFO_PATH, {
+      list: batch.map(token => ({
+        chain: token.chain,
+        contract: token.address
+      }))
+    });
+
+    for (const token of data?.list ?? []) {
+      if (!token.chain || !token.contract) {
+        continue;
+      }
+      metadataByToken.set(bitgetTokenKey(token.chain, token.contract), token);
+    }
+  }
+
+  return metadataByToken;
+}
+
+async function fetchBitgetXStocksTokens() {
+  if (!BITGET_WEB3_API_KEY || !BITGET_WEB3_API_SECRET) {
+    console.warn('Skipping Bitget xStocks tokens: BITGET_WEB3_API_KEY and BITGET_WEB3_API_SECRET are required.');
+    return [];
+  }
+
+  const data = await postBitget(BITGET_RWA_STOCK_LIST_PATH, {});
+  const contracts = (data?.list ?? []).flatMap(stock => {
+    if (stock.status !== 'online') {
+      return [];
+    }
+
+    return (stock.contracts ?? [])
+      .filter(contract => (
+        contract.data_source === 'xstocks' &&
+        contract.status === 'online' &&
+        BITGET_XSTOCKS_CHAINS[contract.chain] &&
+        contract.contract
+      ))
+      .map(contract => ({
+        chain: contract.chain,
+        chainId: BITGET_XSTOCKS_CHAINS[contract.chain],
+        address: contract.contract,
+        name: stock.name || contract.symbol,
+        symbol: contract.symbol,
+        logoURI: stock.icon || ''
+      }));
+  });
+  const uniqueContracts = Array.from(
+    new Map(contracts.map(token => [bitgetTokenKey(token.chain, token.address), token])).values()
+  );
+  const metadataByToken = await fetchBitgetTokenMetadata(uniqueContracts);
+
+  return uniqueContracts.map(token => {
+    const metadata = metadataByToken.get(bitgetTokenKey(token.chain, token.address));
+    const decimals = Number(metadata?.decimals);
+    if (!Number.isInteger(decimals) || decimals < 0) {
+      throw new Error(`Bitget token metadata is missing decimals for ${token.chain}:${token.address}`);
+    }
+
+    return {
+      chainId: token.chainId,
+      address: token.address,
+      name: metadata?.name || token.name,
+      symbol: metadata?.symbol || token.symbol,
+      decimals,
+      logoURI: metadata?.icon || token.logoURI
+    };
+  });
+}
+
 async function fetchEnsoStockTokens() {
   const response = await axios.get(ENSO_API_URL, getEnsoRequestConfig());
   const ensoTokens = Array.isArray(response.data?.data) ? response.data.data : [];
@@ -241,11 +377,13 @@ async function fetchBinanceBStockTokens() {
 async function fetchSourceTokens() {
   const results = await Promise.allSettled([
     fetchEnsoStockTokens(),
-    fetchBinanceBStockTokens()
+    fetchBinanceBStockTokens(),
+    fetchBitgetXStocksTokens()
   ]);
-  const [ensoResult, binanceResult] = results;
+  const [ensoResult, binanceResult, bitgetResult] = results;
   const ensoTokens = ensoResult.status === 'fulfilled' ? ensoResult.value : [];
   const binanceTokens = binanceResult.status === 'fulfilled' ? binanceResult.value : [];
+  const bitgetXStocksTokens = bitgetResult.status === 'fulfilled' ? bitgetResult.value : [];
 
   if (ensoResult.status === 'rejected') {
     console.error(`Failed to fetch Enso stock tokens: ${ensoResult.reason.message}`);
@@ -253,12 +391,15 @@ async function fetchSourceTokens() {
   if (binanceResult.status === 'rejected') {
     console.error(`Failed to fetch Binance bStock tokens: ${binanceResult.reason.message}`);
   }
+  if (bitgetResult.status === 'rejected') {
+    console.error(`Failed to fetch Bitget xStocks tokens: ${bitgetResult.reason.message}`);
+  }
 
   if (ensoResult.status === 'rejected') {
     throw ensoResult.reason;
   }
 
-  return { ensoTokens, binanceTokens };
+  return { ensoTokens, binanceTokens, bitgetXStocksTokens };
 }
 
 async function main() {
@@ -268,14 +409,15 @@ async function main() {
     const existingTokens = Array.isArray(stockJson.tokens) ? stockJson.tokens : [];
     const existingTokenKeys = new Set(existingTokens.filter(token => token.address).map(token => tokenKey(token.chainId, token.address)));
 
-    const { ensoTokens, binanceTokens } = await fetchSourceTokens();
-    const sourceTokens = [...ensoTokens, ...binanceTokens];
+    const { ensoTokens, binanceTokens, bitgetXStocksTokens } = await fetchSourceTokens();
+    const sourceTokens = [...ensoTokens, ...binanceTokens, ...bitgetXStocksTokens];
     const newTokens = sourceTokens
       .filter(token => !existingTokenKeys.has(tokenKey(token.chainId, token.address)))
       .map(buildStockToken);
     const tokens = [...existingTokens, ...newTokens].map(token => ({ ...token }));
     const { downloadedCount, localizedCount } = await localizeBnbStockTokenLogos(tokens);
     const syncedEthereumLogoCount = syncEthereumStockTokenLogos(tokens);
+    console.log(`Fetched ${ensoTokens.length} Ethereum stock tokens, ${binanceTokens.length} Binance bStock tokens, and ${bitgetXStocksTokens.length} Bitget xStocks tokens.`);
 
     const nextVersion = {
       ...(stockJson.version || {}),
@@ -298,7 +440,6 @@ async function main() {
     console.log(`Wrote ${newTokens.length} new stock tokens to stock.tokenlist.json`);
     console.log(`Downloaded ${downloadedCount} BNB stock token logos and localized ${localizedCount} logo URIs.`);
     console.log(`Synced ${syncedEthereumLogoCount} Ethereum stock token logo URIs from same-name BNB tokens.`);
-    console.log(`Fetched ${ensoTokens.length} Ethereum stock tokens and ${binanceTokens.length} Binance bStock tokens.`);
   } catch (error) {
     if (error.response?.status === 401 || error.response?.status === 403) {
       const responseMessage = error.response?.data?.message;
