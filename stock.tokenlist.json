@@ -5,7 +5,7 @@
     "stock",
     "ondo tokenized"
   ],
-  "timestamp": "2026-08-11T15:40:43.242Z",
+  "timestamp": "2026-08-12T08:56:07.163Z",
   "tokens": [
     {
       "chainId": 1,
@@ -12122,11 +12122,24 @@
         "fewName": "Few Wrapped Tesla xStock",
         "fewSymbol": "fwTSLAx"
       }
+    },
+    {
+      "chainId": 1,
+      "address": "0xEE69f45715bfa6A4cffe2bB7e0D71093B9D58705",
+      "name": "Ondo Magnificent 7 and Crypto Portfolio",
+      "symbol": "MAG7Xon",
+      "decimals": 18,
+      "logoURI": "https://icons.llamao.fi/icons/protocols/ondo-finance",
+      "extensions": {
+        "fewWrappedAddress": "0x275d0Cd8fD17a1baBb54253FEbC2fBcA80dd64Ad",
+        "fewName": "Few Wrapped Ondo Magnificent 7 and Crypto Portfolio",
+        "fewSymbol": "fwMAG7Xon"
+      }
     }
   ],
   "version": {
     "major": 24,
     "minor": 1,
-    "patch": 45
+    "patch": 46
   }
 }
