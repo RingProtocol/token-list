@@ -11,7 +11,9 @@ dotenv.config();
 
 const ETHEREUM_CHAIN_ID = 1;
 const BNB_CHAIN_ID = 56;
+const ARBITRUM_CHAIN_ID = 42161;
 const ENSO_API_URL = 'https://api.enso.build/api/v1/tokens?protocolSlug=ondo-gm&includeMetadata=true';
+const REALITY_RTOKEN_API_URL = 'https://api.realityfinance.xyz/api/v1/rwa/assets/tickers';
 const BINANCE_WEB3_API_URL = process.env.BINANCE_WEB3_API_URL || 'https://web3.binance.com/build';
 const BINANCE_RWA_TOKENS_PATH = '/api/v1/dex/market/rwa/tokens';
 const BITGET_WEB3_API_URL = process.env.BITGET_WEB3_API_URL || 'https://bopenapi.bgwapi.io';
@@ -313,6 +315,34 @@ async function fetchEnsoStockTokens() {
     .map(token => ({ ...token, chainId: ETHEREUM_CHAIN_ID }));
 }
 
+async function fetchRealityRTokens() {
+  const response = await axios.get(REALITY_RTOKEN_API_URL, {
+    params: { network: 'ARB' }
+  });
+  const assets = Array.isArray(response.data)
+    ? response.data
+    : (Array.isArray(response.data?.data) ? response.data.data : []);
+
+  return assets
+    .filter(asset => asset.status === 'active')
+    .flatMap(asset => (Array.isArray(asset.tokens) ? asset.tokens : [])
+      .filter(token => (
+        token.network === 'ARB' &&
+        token.address &&
+        token.symbol &&
+        Number.isInteger(Number(token.decimals)) &&
+        Number(token.decimals) >= 0
+      ))
+      .map(token => ({
+        chainId: ARBITRUM_CHAIN_ID,
+        address: token.address,
+        name: asset.title || asset.ticker || token.symbol,
+        symbol: token.symbol,
+        decimals: Number(token.decimals),
+        logoURI: asset.icon || ''
+      })));
+}
+
 function extractBinanceTokens(responseData) {
   const data = responseData?.data ?? responseData;
   if (Array.isArray(data)) {
@@ -378,12 +408,14 @@ async function fetchSourceTokens() {
   const results = await Promise.allSettled([
     fetchEnsoStockTokens(),
     fetchBinanceBStockTokens(),
-    fetchBitgetXStocksTokens()
+    fetchBitgetXStocksTokens(),
+    fetchRealityRTokens()
   ]);
-  const [ensoResult, binanceResult, bitgetResult] = results;
+  const [ensoResult, binanceResult, bitgetResult, realityResult] = results;
   const ensoTokens = ensoResult.status === 'fulfilled' ? ensoResult.value : [];
   const binanceTokens = binanceResult.status === 'fulfilled' ? binanceResult.value : [];
   const bitgetXStocksTokens = bitgetResult.status === 'fulfilled' ? bitgetResult.value : [];
+  const realityRTokens = realityResult.status === 'fulfilled' ? realityResult.value : [];
 
   if (ensoResult.status === 'rejected') {
     console.error(`Failed to fetch Enso stock tokens: ${ensoResult.reason.message}`);
@@ -394,12 +426,15 @@ async function fetchSourceTokens() {
   if (bitgetResult.status === 'rejected') {
     console.error(`Failed to fetch Bitget xStocks tokens: ${bitgetResult.reason.message}`);
   }
+  if (realityResult.status === 'rejected') {
+    console.error(`Failed to fetch Reality rTokens: ${realityResult.reason.message}`);
+  }
 
   if (ensoResult.status === 'rejected') {
     throw ensoResult.reason;
   }
 
-  return { ensoTokens, binanceTokens, bitgetXStocksTokens };
+  return { ensoTokens, binanceTokens, bitgetXStocksTokens, realityRTokens };
 }
 
 async function main() {
@@ -409,15 +444,15 @@ async function main() {
     const existingTokens = Array.isArray(stockJson.tokens) ? stockJson.tokens : [];
     const existingTokenKeys = new Set(existingTokens.filter(token => token.address).map(token => tokenKey(token.chainId, token.address)));
 
-    const { ensoTokens, binanceTokens, bitgetXStocksTokens } = await fetchSourceTokens();
-    const sourceTokens = [...ensoTokens, ...binanceTokens, ...bitgetXStocksTokens];
+    const { ensoTokens, binanceTokens, bitgetXStocksTokens, realityRTokens } = await fetchSourceTokens();
+    const sourceTokens = [...ensoTokens, ...binanceTokens, ...bitgetXStocksTokens, ...realityRTokens];
     const newTokens = sourceTokens
       .filter(token => !existingTokenKeys.has(tokenKey(token.chainId, token.address)))
       .map(buildStockToken);
     const tokens = [...existingTokens, ...newTokens].map(token => ({ ...token }));
     const { downloadedCount, localizedCount } = await localizeBnbStockTokenLogos(tokens);
     const syncedEthereumLogoCount = syncEthereumStockTokenLogos(tokens);
-    console.log(`Fetched ${ensoTokens.length} Ethereum stock tokens, ${binanceTokens.length} Binance bStock tokens, and ${bitgetXStocksTokens.length} Bitget xStocks tokens.`);
+    console.log(`Fetched ${ensoTokens.length} Ethereum stock tokens, ${binanceTokens.length} Binance bStock tokens, ${bitgetXStocksTokens.length} Bitget xStocks tokens, and ${realityRTokens.length} Reality rTokens.`);
 
     const nextVersion = {
       ...(stockJson.version || {}),

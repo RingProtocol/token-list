@@ -61,7 +61,9 @@ node generateRingXTokenList.js
 
 ## Stock token list 自动更新
 
-`generateStockTokenList.js` 使用 Enso API 获取 Ethereum Ondo GM token 数据，并使用 Binance Web3 API 获取 BNB Chain bStock token 数据。运行一次 `yarn generate:stock-tokenlist` 会将两个来源的新 token 合并写入 `stock.tokenlist.json`。
+`generateStockTokenList.js` 使用 Enso API 获取 Ethereum Ondo GM token 数据、Binance Web3 API 获取 BNB Chain bStock token 数据、Bitget API 获取 xStocks token 数据，并从 Reality API 获取 Arbitrum rToken 数据。运行一次 `yarn generate:stock-tokenlist` 会将这些来源的新 token 合并写入 `stock.tokenlist.json`。
+
+Reality rToken 来源为 `https://api.realityfinance.xyz/api/v1/rwa/assets/tickers?network=ARB`。生成器只保留状态为 `active` 的资产及其网络为 `ARB` 的 token，并映射到 Arbitrum One（chainId `42161`）。该接口不需要 API key。
 
 GitHub Actions 的 runner 可能会被 Enso API 拒绝裸请求，因此自动更新需要配置 API key，否则会在 `Generate stock token list` 步骤返回 403。若 Enso 返回 401 且错误为 `legacy_key_retired`，需要在 https://developers.enso.build 重新生成 key。
 
