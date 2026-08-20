@@ -6,7 +6,7 @@
     "layer2",
     "infrastructure"
   ],
-  "timestamp": "2023-12-29T04:10:37.690Z",
+  "timestamp": "2026-08-19T13:19:15.000Z",
   "tokens": [
     {
       "chainId": 81457,
@@ -691,6 +691,58 @@
     },
     {
       "chainId": 1,
+      "address": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+      "name": "Uniswap",
+      "symbol": "UNI",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/UNI/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0xE8E1F50392Bd61D0F8F48E8E7aF51D3b8a52090a",
+        "fewName": "Few Wrapped Uniswap",
+        "fewSymbol": "fwUNI"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf",
+      "name": "Coinbase Wrapped BTC",
+      "symbol": "cbBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf/logo.png",
+      "extensions": {
+        "fewWrappedAddress": "0xDbf1703e5d29afEfbF1bD958ce7a6023c67f3E5d",
+        "fewName": "Few Wrapped Coinbase Wrapped BTC",
+        "fewSymbol": "fwcbBTC"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+      "name": "Wrapped eETH",
+      "symbol": "weETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_weETH.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x9553d5F1f564EDE30f5a9F0274cD0AF7A00546e7",
+        "fewName": "Few Wrapped weETH",
+        "fewSymbol": "fwweETH"
+      }
+    },
+    {
+      "chainId": 1,
+      "address": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+      "name": "Wrapped stETH",
+      "symbol": "wstETH",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/18834/thumb/wstETH.png?1696518295",
+      "extensions": {
+        "fewWrappedAddress": "0xB90e63487bc6A4fa3d58F707510Dab3C28a63137",
+        "fewName": "Few Wrapped Wrapped stETH",
+        "fewSymbol": "fwwstETH"
+      }
+    },
+    {
+      "chainId": 1,
       "address": "0x2078f336Fdd260f708BEc4a20c82b063274E1b23",
       "name": "Few Wrapped Wrapped BTC",
       "symbol": "fwWBTC",
@@ -732,6 +784,42 @@
       "symbol": "fwDAI",
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_DAI.svg",
+      "extensions": {}
+    },
+    {
+      "chainId": 1,
+      "address": "0xE8E1F50392Bd61D0F8F48E8E7aF51D3b8a52090a",
+      "name": "Few Wrapped Uniswap",
+      "symbol": "fwUNI",
+      "decimals": 18,
+      "logoURI": "https://ethereum-optimism.github.io/data/UNI/logo.png",
+      "extensions": {}
+    },
+    {
+      "chainId": 1,
+      "address": "0xDbf1703e5d29afEfbF1bD958ce7a6023c67f3E5d",
+      "name": "Few Wrapped Coinbase Wrapped BTC",
+      "symbol": "fwcbBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/Few-Protocol/assets/support_blast_mainnet/blockchains/ethereum/assets/0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf/logo.png",
+      "extensions": {}
+    },
+    {
+      "chainId": 1,
+      "address": "0x9553d5F1f564EDE30f5a9F0274cD0AF7A00546e7",
+      "name": "Few Wrapped weETH",
+      "symbol": "fwweETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_weETH.svg",
+      "extensions": {}
+    },
+    {
+      "chainId": 1,
+      "address": "0xB90e63487bc6A4fa3d58F707510Dab3C28a63137",
+      "name": "Few Wrapped Wrapped stETH",
+      "symbol": "fwwstETH",
+      "decimals": 18,
+      "logoURI": "https://assets.coingecko.com/coins/images/18834/thumb/wstETH.png?1696518295",
       "extensions": {}
     },
     {
@@ -1096,7 +1184,7 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/RingProtocol/token-list/master/assets/asset_WBNB.png",
       "extensions": {
-        "fewWrappedAddress": "0x05e6c1B4Da05c41c86c35Ce42a8a222C1a450167",
+        "fewWrappedAddress": "0x7f0172b75d3823D8aF04feE3A3f6a14aBD68EFE1",
         "fewName": "Few Wrapped Wrapped BNB",
         "fewSymbol": "fwWBNB"
       }
@@ -1168,7 +1256,7 @@
     },
     {
       "chainId": 56,
-      "address": "0x05e6c1B4Da05c41c86c35Ce42a8a222C1a450167",
+      "address": "0x7f0172b75d3823D8aF04feE3A3f6a14aBD68EFE1",
       "name": "Few Wrapped Wrapped BNB",
       "symbol": "fwWBNB",
       "decimals": 18,
@@ -1294,8 +1382,8 @@
     }
   ],
   "version": {
-    "major": 24,
+    "major": 25,
     "minor": 0,
-    "patch": 37
+    "patch": 0
   }
 }
