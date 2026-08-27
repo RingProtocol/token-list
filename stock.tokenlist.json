@@ -5,7 +5,7 @@
     "stock",
     "ondo tokenized"
   ],
-  "timestamp": "2026-08-25T08:25:38.926Z",
+  "timestamp": "2026-08-27T18:25:55.222Z",
   "tokens": [
     {
       "chainId": 1,
@@ -21846,11 +21846,37 @@
         "fewName": "Few Wrapped Hyatt Hotels",
         "fewSymbol": "fwrH"
       }
+    },
+    {
+      "chainId": 42161,
+      "address": "0x0CaA929A69a43aA8f4dD3497044870259526f39B",
+      "name": "Trump Media & Technology",
+      "symbol": "rDJT",
+      "decimals": 18,
+      "logoURI": "https://img.bgstatic.com/pst/certificate/1028/6ec9973bc464f9a1dbb58f13a040ad931787739632910.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x0e6EdDE8c6B37106B08B541557A821FABe25FC22",
+        "fewName": "Few Wrapped Trump Media & Technology",
+        "fewSymbol": "fwrDJT"
+      }
+    },
+    {
+      "chainId": 42161,
+      "address": "0x8AD2E038005359cB2955292a3411a84516e99Ed3",
+      "name": "HYPERLIQUID STRATEGIES INC",
+      "symbol": "rPURR",
+      "decimals": 18,
+      "logoURI": "https://img.bgstatic.com/pst/certificate/1028/e24426c18a45841e553b4c244a6c4cda1787739632913.svg",
+      "extensions": {
+        "fewWrappedAddress": "0xb46B47eb1d07a9dF1bFB8f7b70D60A81d9b37556",
+        "fewName": "Few Wrapped HYPERLIQUID STRATEGIES INC",
+        "fewSymbol": "fwrPURR"
+      }
     }
   ],
   "version": {
     "major": 24,
     "minor": 1,
-    "patch": 49
+    "patch": 50
   }
 }
