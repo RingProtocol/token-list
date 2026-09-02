@@ -5,7 +5,7 @@
     "stock",
     "ondo tokenized"
   ],
-  "timestamp": "2026-09-01T12:49:05.491Z",
+  "timestamp": "2026-09-02T12:18:38.753Z",
   "tokens": [
     {
       "chainId": 1,
@@ -22028,11 +22028,24 @@
         "fewName": "Few Wrapped MPLX LP",
         "fewSymbol": "fwrMPLX"
       }
+    },
+    {
+      "chainId": 42161,
+      "address": "0x08898194819fDFAd1504e92BB77fDD4cb2Cf603a",
+      "name": "NASDAQ-100 HIGH INCOME ETF",
+      "symbol": "rIQQQ",
+      "decimals": 18,
+      "logoURI": "https://img.bgstatic.com/pst/certificate/1028/32447503e0f511b94435ddf1966165bc1788348516652.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x8baD243dBc6cEc1556742cb82A92Dd1B72023761",
+        "fewName": "Few Wrapped NASDAQ-100 HIGH INCOME ETF",
+        "fewSymbol": "fwrIQQQ"
+      }
     }
   ],
   "version": {
     "major": 24,
     "minor": 1,
-    "patch": 51
+    "patch": 52
   }
 }
