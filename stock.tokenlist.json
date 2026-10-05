@@ -5,7 +5,7 @@
     "stock",
     "ondo tokenized"
   ],
-  "timestamp": "2026-09-24T12:56:09.466Z",
+  "timestamp": "2026-10-05T16:27:28.909Z",
   "tokens": [
     {
       "chainId": 1,
@@ -54489,11 +54489,37 @@
         "fewName": "Few Wrapped Wave Life Sciences",
         "fewSymbol": "fwrWVE"
       }
+    },
+    {
+      "chainId": 42161,
+      "address": "0xD41bfb7F6E90C0e92a200Abc818355330Ca4C8C9",
+      "name": "CBRG",
+      "symbol": "rCBRG",
+      "decimals": 18,
+      "logoURI": "https://img.bgstatic.com/multiLang/web/464998f56a7805ff56a79cf181da462b.svg",
+      "extensions": {
+        "fewWrappedAddress": "0xC63D032ab6734e3Bfa1A00081f13e49826AFCebF",
+        "fewName": "Few Wrapped CBRG",
+        "fewSymbol": "fwrCBRG"
+      }
+    },
+    {
+      "chainId": 42161,
+      "address": "0xb6D987d52fa615aAD2F431fDBC66d46d96577362",
+      "name": "AURE",
+      "symbol": "rAURE",
+      "decimals": 18,
+      "logoURI": "https://img.bgstatic.com/multiLang/web/28e38e6cea7d874b53c07b997cd45cc6.svg",
+      "extensions": {
+        "fewWrappedAddress": "0x77F004D3fc61f4eB3ee9209d6b1fB9e00C7DB2de",
+        "fewName": "Few Wrapped AURE",
+        "fewSymbol": "fwrAURE"
+      }
     }
   ],
   "version": {
     "major": 24,
     "minor": 1,
-    "patch": 59
+    "patch": 60
   }
 }
