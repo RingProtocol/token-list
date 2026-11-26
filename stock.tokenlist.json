@@ -5,7 +5,7 @@
     "stock",
     "ondo tokenized"
   ],
-  "timestamp": "2026-11-20T16:26:52.019Z",
+  "timestamp": "2026-11-26T17:55:07.670Z",
   "tokens": [
     {
       "chainId": 1,
@@ -55997,11 +55997,50 @@
         "fewName": "Few Wrapped Franklin US Treasury Bond ETF (Ondo Tokenized ETF)",
         "fewSymbol": "fwFLGVON"
       }
+    },
+    {
+      "chainId": 42161,
+      "address": "0xd9808e308341720b1739a61384383AACAA6B911B",
+      "name": "ISHARES FUTURE AI & TECH ETF",
+      "symbol": "rARTY",
+      "decimals": 18,
+      "logoURI": "https://img.bgstatic.com/pst/certificate/1532/160a443451a9ca50b7fc8cbb27ebf8b11795683639471.png",
+      "extensions": {
+        "fewWrappedAddress": "0x973030E27f6c3dEB5df61587f1DC21606823e35f",
+        "fewName": "Few Wrapped ISHARES FUTURE AI & TECH ETF",
+        "fewSymbol": "fwrARTY"
+      }
+    },
+    {
+      "chainId": 42161,
+      "address": "0x3536e48Aa937B65386004144c153542EDEd0779C",
+      "name": "2X ANT Long Daily ETF",
+      "symbol": "rANTO",
+      "decimals": 18,
+      "logoURI": "https://img.bgstatic.com/pst/certificate/1532/e5ee2ff6e0bbdc8362210f32fb79b6931795683639469.png",
+      "extensions": {
+        "fewWrappedAddress": "0x07c36ae8Fa59588075F5e5bfe6bF3C77df058f88",
+        "fewName": "Few Wrapped 2X ANT Long Daily ETF",
+        "fewSymbol": "fwrANTO"
+      }
+    },
+    {
+      "chainId": 42161,
+      "address": "0xA53032c3C1d02b0e768627f7AFB2b25522bc47d7",
+      "name": "2X ANT Short Daily ETF",
+      "symbol": "rANTD",
+      "decimals": 18,
+      "logoURI": "https://img.bgstatic.com/pst/certificate/1532/0b3963a6c75877a714b4d30e1c0160421795683639472.png",
+      "extensions": {
+        "fewWrappedAddress": "0x51D473891EDb0423302fc4f089420958e32C845b",
+        "fewName": "Few Wrapped 2X ANT Short Daily ETF",
+        "fewSymbol": "fwrANTD"
+      }
     }
   ],
   "version": {
     "major": 24,
     "minor": 1,
-    "patch": 64
+    "patch": 65
   }
 }
